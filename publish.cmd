@@ -1,5 +1,15 @@
-set versiondir=v4.0
+@echo off
+
+REM Der name des Branches ist gleich dem Versions-Verzeichnis im Ziel-Repo
+for /f "tokens=*" %%i in ('git rev-parse --abbrev-ref HEAD') do set versiondir=%%i
+echo.
+echo Pulish %versiondir% ?
+echo.
+echo.
+pause
+
 set currentpath=%cd%
+
 
 REM prüfen, ob das aktuelle Repo clean ist und auf neusten Stand bringen
 cd %currentpath%
