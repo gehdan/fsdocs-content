@@ -27,6 +27,12 @@
       },
       {
         "files": [
+          "doc/**.md",
+          "doc/**.yml"
+        ]
+      },
+      {
+        "files": [
           "toc.yml",
           "index.md"
         ]

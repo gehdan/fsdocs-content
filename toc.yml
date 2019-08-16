@@ -1,2 +1,5 @@
+- name: Technische Doku
+  href: doc/
+
 - name: Api Documentation
   href: obj/api/
