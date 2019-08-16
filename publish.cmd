@@ -1,4 +1,4 @@
-set versiondir=v4.0
+set versiondir=v4.2
 set currentpath=%cd%
 
 REM prüfen, ob das ziel-Repo clean ist.
