@@ -48,6 +48,13 @@ git add .
 git commit -m "publish %versiondir%"
 git push
 
+
+echo.
+echo.
+echo F E R T I G
+echo.
+echo.
+
 pause
 exit
 
