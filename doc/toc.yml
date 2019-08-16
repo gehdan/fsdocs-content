@@ -1,0 +1,7 @@
+- name: Technische Doku
+  href: index.md
+  items:
+    - name: Metadatentypen
+      href: mdt/ 
+    - name: Components
+      href: comp/
