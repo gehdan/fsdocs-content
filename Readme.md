@@ -1,3 +1,3 @@
 # Framework Studio Dokumentation
 
-[Guidelines zur Bearbeitung der Dokumentation](guidelines/Index.md)
+[Guidelines zur Bearbeitung der Dokumentation](guidelines/index.md)
