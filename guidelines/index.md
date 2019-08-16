@@ -1,3 +1,3 @@
 # Guidelines zum Bearbeiten der Dokumentation
 
-* [Bilder](Bilder.md)
+* [Bilder](bilder.md)

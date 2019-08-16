@@ -11,7 +11,7 @@ Bilder werden in einen Ordner `media` abgelegt. Dieser Ordner befindet sich in d
       |-- page.md
 ```
 
-## Verweis auf ein Bild:
+## Verweis auf ein Bild
 
 ```md
 ![Name des Bildes](media/bild.png)
