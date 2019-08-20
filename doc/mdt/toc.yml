@@ -1,2 +1,9 @@
 - name: Metadatentypen
   href: metadatentypen.md
+  items:
+    - name: Format Pattern
+      href: format-pattern.md
+    - name: Vererbung
+      href: vererbung.md
+    - name: Validierung
+      href: validierung.md

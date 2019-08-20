@@ -5,3 +5,23 @@
       href: mdt/ 
     - name: Components
       href: comp/
+    - name: Sql-Syntax
+      href: sql/syntax.md
+      items:
+        - name: Grammatik
+          href: sql/grammatik.md
+        - name: Operatoren
+          href: sql/operatoren.md
+        - name: SQL-Funktionen
+          href: sql/funktionen.md
+        - name: Alphanumerische Funktionen
+          href: sql/alpha-funktionen.md
+        - name: Numerische Funktionen
+          href: sql/num-funktionen.md
+        - name: Datums-Funktionen
+          href: sql/datum-funktionen.md
+        - name: Umwandlungsfunktionen
+          href: sql/cast-funktionen.md
+        - name: Aggregat-Funktionen
+          href: sql/aggr-funktionen.md
+      
