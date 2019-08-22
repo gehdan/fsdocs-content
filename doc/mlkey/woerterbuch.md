@@ -54,7 +54,7 @@ Mit dem Button **Add** öffnet sich ein Dialog, in dem der neue MLKey erfasst we
     * z.B. `MSG_1c9f3024dfc340dfba0651cb92d90ad6`
   * In Customizing-Packages erhält der MLKey einen Package-Code. Dieser wird automatisch vorbelegt.
     * z.B. `LBL_K87_SpecialArticle`
-  * In der **eNVenta/WS** Standard-Entwicklung sind entsprechende [Namensregeln](enventa-namensregeln.md) einzuhalten.
+  * In der **eNVenta/WS** Standard-Entwicklung sind entsprechende [Namensregeln](enventa-regeln.md) einzuhalten.
 
   Wird dieser Dialog aus der MLKey-Suche heraus geöffnet, dann wird abhängig vom jeweiligen Context auch ein passender Präfix vorbelegt:
 
