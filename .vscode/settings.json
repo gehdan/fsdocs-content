@@ -1,8 +1,13 @@
 {
     "cSpell.language": ",de,en",
     "cSpell.words": [
+        "multilanguage",
         "editfeld",
+        "enventa",
         "f",
+        "metadatatypen",
+        "mlkey",
+        "mlstring",
         "sbool",
         "sbyte",
         "sdecimal",
@@ -12,9 +17,6 @@
         "slong",
         "smallint",
         "sshort",
-        "metadatatypen",
-        "sbyte",
-        "smallint",
         "sstring",
         "varchar"
     ]

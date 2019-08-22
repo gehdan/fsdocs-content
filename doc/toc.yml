@@ -1,6 +1,25 @@
 - name: Technische Doku
   href: index.md
   items:
+    - name: MLKey
+      items:
+        - name: Wörterbuch
+          href: mlkey/woerterbuch.md
+        - name: MLString
+          href: mlkey/mlstring.md
+        - name: Programmierung
+          href: mlkey/programmierung.md
+        - name: Import / Export
+          href: mlkey/import-export.md
+        - name: Migration
+          href: mlkey/migration.md
+        - name: Regeln in eNVenta
+          href: mlkey/enventa-regeln.md
+        - name: MLKeys Cleanup
+          href: mlkey/mlkey-cleanup.md
+        - name: TODO
+          href: mlkey/draft.md
+
     - name: Metadatentypen
       href: mdt/ 
     - name: Components
