@@ -1,46 +1,48 @@
-- name: Technische Doku
+- name: Allgemein
   href: index.md
-  items:
-    - name: MLKey
-      items:
-        - name: Wörterbuch
-          href: mlkey/woerterbuch.md
-        - name: MLString
-          href: mlkey/mlstring.md
-        - name: Programmierung
-          href: mlkey/programmierung.md
-        - name: Import / Export
-          href: mlkey/import-export.md
-        - name: Migration
-          href: mlkey/migration.md
-        - name: Regeln in eNVenta
-          href: mlkey/enventa-regeln.md
-        - name: MLKeys Cleanup
-          href: mlkey/mlkey-cleanup.md
-        - name: TODO
-          href: mlkey/draft.md
 
-    - name: Metadatentypen
-      href: mdt/ 
-    - name: Components
-      href: comp/
-    - name: Sql-Syntax
-      href: sql/syntax.md
-      items:
-        - name: Grammatik
-          href: sql/grammatik.md
-        - name: Operatoren
-          href: sql/operatoren.md
-        - name: SQL-Funktionen
-          href: sql/funktionen.md
-        - name: Alphanumerische Funktionen
-          href: sql/alpha-funktionen.md
-        - name: Numerische Funktionen
-          href: sql/num-funktionen.md
-        - name: Datums-Funktionen
-          href: sql/datum-funktionen.md
-        - name: Umwandlungsfunktionen
-          href: sql/cast-funktionen.md
-        - name: Aggregat-Funktionen
-          href: sql/aggr-funktionen.md
-      
+- name: MLKey
+  href: mlkey/woerterbuch.md
+  items:
+    - name: Wörterbuch
+      href: mlkey/woerterbuch.md
+    - name: MLString
+      href: mlkey/mlstring.md
+    - name: Programmierung
+      href: mlkey/programmierung.md
+    - name: Import / Export
+      href: mlkey/import-export.md
+    - name: Migration
+      href: mlkey/migration.md
+    - name: Regeln in eNVenta
+      href: mlkey/enventa-regeln.md
+    - name: MLKeys Cleanup
+      href: mlkey/mlkey-cleanup.md
+    - name: TODO
+      href: mlkey/draft.md
+
+- name: Metadatentypen
+  href: mdt/ 
+
+- name: Components
+  href: comp/
+
+- name: Sql-Syntax
+  href: sql/syntax.md
+  items:
+    - name: Grammatik
+      href: sql/grammatik.md
+    - name: Operatoren
+      href: sql/operatoren.md
+    - name: SQL-Funktionen
+      href: sql/funktionen.md
+    - name: Alphanumerische Funktionen
+      href: sql/alpha-funktionen.md
+    - name: Numerische Funktionen
+      href: sql/num-funktionen.md
+    - name: Datums-Funktionen
+      href: sql/datum-funktionen.md
+    - name: Umwandlungsfunktionen
+      href: sql/cast-funktionen.md
+    - name: Aggregat-Funktionen
+      href: sql/aggr-funktionen.md
