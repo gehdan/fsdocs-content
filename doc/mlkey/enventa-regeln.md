@@ -41,7 +41,7 @@ Beispiel: `LBL_Plus_Sign` für den Text „+“
 Beispiele:
 
 * `LBL_Nine_Digit` für den Text „9“,
-* LBL_EightOClock_Digits` für den Text „08:00“
+* `LBL_EightOClock_Digits` für den Text „08:00“
 
 ### Prozentzeichen
 
@@ -75,27 +75,33 @@ Beispiele:
 
 **`LBL_{englische Bezeichnung}_Mini`**
 
-Wird ein MiniButton (Constrol Style = MiniEmpty) auf einer Maske mit einer Caption von 1 bis 2 Buchstaben versehen (die typischerweise eine Abkürzung darstellen), so wird der MLKey dazu mit der eigentlichen Bezeichnung, ergänzt um `_Mini` beschriftet. Dabei ist darauf zu achten, dass die Beschriftungen pro Sprache eindeutig sind.
+Wird ein MiniButton (Constrol Style = MiniEmpty) auf einer Maske mit einer Caption von 1 bis 2 Buchstaben versehen (die typischerweise eine Abkürzung darstellen), so wird der MLKey dazu mit der eigentlichen Bezeichnung, ergänzt um **`_Mini`** beschriftet. Dabei ist darauf zu achten, dass die Beschriftungen pro Sprache eindeutig sind.
 
 Beispiele:
 
-* **`LBL_Custoner_Mini`** (de = „K“, en = „Cu“)
-* **`LBL_CrossOver_Mini`** (de = „C“, en = „Cr“)
+* `LBL_Custoner_Mini` (de = „K“, en = „Cu“)
+* `LBL_CrossOver_Mini` (de = „C“, en = „Cr“)
 
 ### Zwei unterschiedliche deutsche Begriffe, die im Englischen gleich heißen
 
-Wenn zwei unterschiedliche Begriffe im englischen durch den gleichen Text beschrieben werden, so werden die Bezeichnungen der MLKeys durch Anhängen eines Zählers beginnend mit 2 im Format **`_{Zähler}`** unterschieden.
+Wenn zwei unterschiedliche Begriffe im englischen durch den gleichen Text beschrieben werden, so werden die Bezeichnungen der MLKeys durch Anhängen eines Zählers beginnend mit 1 im Format **`_{Zähler}`** unterschieden.
 
 Beispiel:
 
 * de = „Herkunft“, en = „Source“ => MLKey = `LBL_Source`
-* de = „Quelle“, en = „Source“ => MLKey = `LBL_Source_2`
+* de = „Quelle“, en = „Source“ => MLKey = `LBL_Source_1`
 
 ### Tooltips
 
-**`TTT_{englische Bezeichnung}`**  oder **`TTT_{GUID}`**
+Wenn ein Tooltip eindeutig einem einfachen Begriff zugeordnet werden kann, so wird der MLKey mit **`TTT_{englische Bezeichnung}`** benannt. Andernfalls wird das Format **`TTT_{GUID}`** verwendet.
 
-**TODO**
+Beispiele:
+
+* `TTT_Fatal` (de = „Fatale Einträge anzeigen“)
+* `TTT_584b58008ed04cd2b40b78b70e52402c' (de = „Wert für die Kreditorenvorerfassung-Pufferzeit definieren.“)
+
+> [!NOTE]
+> Wenn man einen Tooltip verwenden möchte, zu dem es bereits einen exakt passenden `LBL_` Eintrag gibt, so soll dazu kein `TTT_` Eintrag angelegt werden! Diese Einträge wären sonst ja logisch äquivalent.
 
 ### Kleingeschriebene Begriffe
 
@@ -108,8 +114,8 @@ Beispiel: de = „eins“, en = „one“ => MLKey = `LBL_one`
 * Alle Texte in allen Sprachen beginnen mit einem großen Buchstaben.<br>
 Ausnahmen:
   * Abgekürzte Einheiten (z.B. mm)
-  * Einträge in Textcollections, soweit eine Umstellung aller Einträge nicht sicher durchgeführt werden kann.
+  * Einträge in Textcollections, soweit diese zwingend alle klein geschrieben werden müssen.
 
 * Vor Satzzeichen werden keine Leerzeichen verwendet.
 * Ganze Sätze werden mit einem Satzzeichen beendet.
-* Im Englischen werden bei Texten mit bis ca. 4 Worte (Beschriftungen von Eingabefeldern, Menüs, Buttons usw.) alle Worte bis auf Füllwörter wie *of, to, in, ...* groß geschrieben.
+* Im Englischen werden bei Texten mit bis ca. 4 Worte (Beschriftungen von Eingabefeldern, Menüs, Buttons usw.) alle Worte bis auf Füllwörter wie *of*, *to*, *in*, ... groß geschrieben.

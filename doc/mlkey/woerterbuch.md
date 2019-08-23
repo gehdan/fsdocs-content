@@ -10,13 +10,13 @@ Die Bearbeitung des Wörterbuchs erfolgt über den **Multilanguage Text Editor**
 
 ![ML-Editor](media/ml-editor.png)
 
-Die im Grid angezeigten Sprachen können in den **Options** mit der Einstellung **Languages in designer** eingestellt werden
+Die im Grid angezeigten Sprachen können in den **Options** mit der Einstellung **Languages in designer** eingestellt werden.
 
 Die Bearbeitung des Wörterbuchs funktioniert ohne Checkout-Mechanismus. Wenn mehrere Benutzer zur gleichen Zeit an denselben MLKeys arbeiten sollten, dann gewinnt derjenige, der zuletzt den Button **Save** drückt.
 
 Der Editor sammelt alle vorgenommenen Änderungen (Add, Edit, Delete) im Hintergrund. Mit dem Button **Save** werden diese in das Repository gespeichert. Dabei wird in einer Transaktion zuerst der aktuelle Stand frisch aus dem Repository gelesen, dann die Änderungen erneut auf diesen (evtl. durch einen anderen Benutzer veränderten) Stand angewendet und zuletzt der neue Stand wieder zurück in das Repository gespeichert.
 
-Das hat die Folge, dass nach einem Save Änderungen sichtbar sind, zuvor von einem anderen Benutzer vorgenommen wurden. Eine Ausnahme sind die Basis-Packages. Die werden aus einem Stand gezogen, den der FrameworkCompiler zum Zeitpunkt des Compile-Laufs in den Workspace gespeichert hat.
+Das hat die Folge, dass nach einem Save Änderungen sichtbar sind, die zuvor von einem anderen Benutzer vorgenommen wurden. Eine Ausnahme sind die Basis-Packages. Diese werden aus einem Stand gezogen, den der FrameworkCompiler zum Zeitpunkt des Compile-Laufs in den Workspace gespeichert hat.
 
 ## Suchen von MLKeys
 
@@ -27,10 +27,10 @@ Essentiell für die tägliche Arbeit ist das Auffinden von existierenden MLKeys.
 * Es können mehrere Worte eingegeben werden. Dann müssen alle Worte oder Wortteile in irgend einem Feld auftauchen. z.B. `MSG_ Artikel Save` sucht nach Messages die mit `Artikel` und `Save` zu tun haben.
 * Generell wird nach Wortteilen gesucht. Wenn man das Wort oder den Text in Anführungszeichen setzt, wird nach einem exakten Treffer und ganzen Worten gesucht. Das funktioniert auch mit mehreren Worten und in Kombination mit der normalen Suche. z.B. `LBL_ "Kunde"`
 
-Ziel des Wörterbuches ist es, Texte wiederzuverwenden und die Anzahl der Einträge auf das Nötigste zu reduzieren. Aus diesem Grund sollte man immer zuerst nach einem MLKey suchen, bevor man einen neuen erfasst.
+Ziel des Wörterbuches ist es, Texte wiederzuverwenden und die Anzahl der Einträge auf das Nötigste zu reduzieren. Aus diesem Grund sollte man immer zuerst nach einem MLKey suchen, bevor man einen neuen erfasst. Zu einem logischen Begriff sollen keine zwei MLKeys existieren.
 
 > [!TIP]
-> Die Suche sollte durchaus kreativ gestaltet werden - besonders bei Texten die eigentlich schon vorhanden sein müssten. Ein Beispiel dafür ist das Wort `Hinzufügen` - vielleicht gibt es ja schon die Alternative `Einfügen`. Durch die Suche nach dem englischen `Add` liefert hier den passenden Treffer.
+> Die Suche sollte durchaus kreativ gestaltet werden - besonders bei Texten die eigentlich schon vorhanden sein müssten. Ein Beispiel dafür ist das Wort `Einfügen`. Möchte man dieses mit der englischen Bezeichnung `Add` nutzen, stellt man fest, dass es `Einfügen` schon mit mehreren Übersetzungen gibt, jedoch nicht mit der englischen Bezeichnung `Add`. Sucht man dann aber nach `Add`, so wird man den zu verwendenden deutschen Text 'Hinzufügen' finden.
 
 ## Erfassen neuer MLKeys
 
@@ -49,7 +49,7 @@ Mit dem Button **Add** öffnet sich ein Dialog, in dem der neue MLKey erfasst we
     * Buchstaben, Zahlen, Unterstrich
     * Groß-Klein-Schreibung ist relevant
   * Der sprechende Name sollte sich nach Möglichkeit an den englischen Text anlehnen.
-    * z.B. `LBL_ArticleID`
+    * z.B. `LBL_Article`
   * Wenn der Text zu komplex ist - z.B. bei Messages oder Tooltips, dann kann der Name eine Guid enthalten. Diese kann mit dem Button **Generate Guid** angefügt werden.
     * z.B. `MSG_1c9f3024dfc340dfba0651cb92d90ad6`
   * In Customizing-Packages erhält der MLKey einen Package-Code. Dieser wird automatisch vorbelegt.
@@ -68,9 +68,9 @@ Mit dem Button **Add** öffnet sich ein Dialog, in dem der neue MLKey erfasst we
 
 * **German**: Die Eingabe eines deutschen Textes ist Pflicht, weil Deutsch immer der letzte Fallback ist, wenn eine Fremdsprache nicht gepflegt ist.
 
-* **Fremdsprachen**: Über die Radio-Buttons kann festgelegt werden, welche Sprache im 2. Textfeld angezeigt oder bearbeitet werden soll. Diese Texte sind Optional.
+* **Fremdsprachen**: Über die Radio-Buttons kann festgelegt werden, welche Sprache im 2. Textfeld angezeigt oder bearbeitet werden soll. Diese Texte sind optional.
 
-  In der **eNVenta/WS** Standard-Entwicklung muss der Englische Text gepflegt werden.
+  In der **eNVenta/WS** Standard-Entwicklung muss der englische Text gepflegt werden.
 
 * Button **Untranslatable**: Es gibt Texte, die nicht übersetzt werden können wie z.B. Eigennamen oder Einheiten. Dieser Button löscht alle Fremdsprachen-Texte und Schreibt den Text `untranslatable` in das **Comment** Feld.
 
