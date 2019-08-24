@@ -88,7 +88,7 @@ Mit dem Button Edit wird für den selektierten MLKey der Bearbeitungs-Dialog ge�
 
 Durch einen Doppelklick in das Grid kann der Bearbeitungs-Dialog ebenfalls geöffnet werden. Dabei wird der Fokus automatisch in das Feld gesetzt, dass der angeklickten Grid-Zelle entspricht. Das ist praktisch, wenn man z.B. gezielt eine Fremdsprache bearbeiten möchte.
 
-Außerdem können alle Texte direkt im Grid bearbeitet werden.
+Außerdem können einzeilige Texte direkt im Grid bearbeitet werden.
 
 > [!NOTE]
 > Die logische Bedeutung des MLKeys darf zu einem späteren Zeitpunkt nicht mehr geändert werden.
@@ -107,9 +107,7 @@ Die Texte können bearbeitet werden.
 
 Wenn man ein oder mehrere Einträge selektiert hat, kann man mit dem Button **Copy Entry** diese in die Zwischenablage kopieren. Mit dem Button **Paste Entry** können diese Einträge z.B. in einer anderen Version des Packages eingefügt werden.
 
-Intern benutzt diese Funktion den [Import- / Export-Mechanismus](import-export.md). Dieser verwendet ein XML im TMX-Format. Dadurch ist es möglich, das XML vor dem **Paste Entry** bei Bedarf in einem Text-Editor zu manipulieren.
-
-* Ändern des MLKey - um z.B. den PackageCode anzupassen.
+Intern benutzt diese Funktion den [Import- / Export-Mechanismus](import-export.md). Dieser verwendet ein XML im TMX-Format. Dadurch ist es möglich, das XML vor dem **Paste Entry** bei Bedarf in einem Text-Editor zu manipulieren, z.B. um den PackageCode des MLKey anzupassen.
 
 Mit **Paste Entry** werden neue MLKeys hinzugefügt. Enthält die Zwischenablage existierende Keys, dann wird vor dem Einfügen ein Auswahl-Dialog angezeigt.
 
@@ -125,7 +123,7 @@ Mit dem Button **Cancel** wird die komplette Aktion abgebrochen. Dann werden auc
 
 Jedes Customizing-Package verwaltet sein eigenes Wörterbuch.
 
-* Es können neue MLKeys angelegt werden. Diese erhalten den Package-Code, damit es in Zukunft keine Kollisionen mit Basis-Packages gibt.
+* Es können neue MLKeys angelegt werden. Diese müssen den Package-Code enthalten, damit es in Zukunft keine Kollisionen mit Basis-Packages gibt.
 
     Bevor ein neuer MLKey angelegt wird, sollte immer geprüft werden, ob es nicht doch einen passenden MLKey gibt.
 

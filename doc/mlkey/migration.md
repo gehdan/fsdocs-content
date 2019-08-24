@@ -62,7 +62,7 @@ Alter Exception-Code vor der Konvertierung:
 
 ```csharp
 #region Required for Exception Editor support. Do not modify manually.
-//Component Type is required
+//Component type is required.
 //Severity: 0 ; Buttons: OK; Icon:Error
 throw new FrameworkApplicationException (String.Format(FSGeneral.ctMessagesFactory.Get(this.Global,3550).Value[Global.SelectedLanguage],new object []{}),0 );
 //<ExceptionEditor TextColl="Messages" ID ="832e0e50c2b748068ba38a2c4422aaab" Severity="0" EHID=""  ></ExceptionEditor>
@@ -72,7 +72,7 @@ throw new FrameworkApplicationException (String.Format(FSGeneral.ctMessagesFacto
 Neuer Exception-Code nach der Konvertierung:
 
 ```csharp
-// FSCodeMessage: Component Type must be required.
+// FSCodeMessage: Component type is required.
 throw new FrameworkApplicationException(this.Global.GetMLKeyText(MLKeys.MSG_445559f2ca44452e8d49ca9515b3a83e), 0);
 ```
 
@@ -96,7 +96,7 @@ Dort stehen mehrere Routinen zur Auswahl. Diese sollten einer nach der anderen a
 
 2. **Transfer translations**
 
-    Wurden trotz vererbten Text Übersetzungen nur an Records gepflegt, dann wurden diese mit der Migration ggf. nicht in das Wörterbuch übertragen. Das wird mit dieser Routine nachgeholt.
+    Wurden trotz vererbtem MLKey Übersetzungen nur an Records gepflegt, dann wurden diese mit der Migration ggf. nicht in das Wörterbuch übertragen. Das wird mit dieser Routine nachgeholt.
 
     Wird an einem Record, der einen MLKey besitzt, eine Übersetzung gefunden und das Wörterbuch kennt diese noch nicht, wird diese in das Wörterbuch übertragen und der Text vom Record entfernt.
 
