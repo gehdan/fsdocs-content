@@ -43,7 +43,7 @@ Der **Code-Editor** bietet diverse Unterstützung bei der Arbeit mit der Klasse 
 
     ![Intellisense](media/mlkey-intellisense.png)
 
-2. Fährt man mit der Maus über einen MLKey dann wird ein **Info-Tooltip** mit dem deutschen Text angezeigt.
+2. Fährt man mit der Maus über einen MLKey, dann wird ein **Info-Tooltip** mit dem deutschen Text angezeigt.
 
     ![Tooltip](media/mlkey-code-tooltip.png)
 
@@ -80,7 +80,7 @@ FSString sAmountEn = this.Global.GetMLText( MLKeys.LBL_Amount, "en" );
 public string FormatMLText(MLKey mlkey, params object[] args)
 ```
 
-Dieser Methode ermittelt für den übergebenen `MLKey` den Text. Es wird zudem ein `String.Format()` mit den übergebenen `args` ausgeführt.
+Diese Methode ermittelt für den übergebenen `MLKey` den Text. Es wird zudem ein `String.Format()` mit den übergebenen `args` ausgeführt.
 
 Beispiel:
 
@@ -109,7 +109,7 @@ throw new FrameworkApplicationException(this.Global.GetMLKeyText(MLKeys.MSG_1b6b
 public MLKeyText FormatMLKeyText(MLKey mlkey, params object[] args)
 ```
 
-Gibt ein MLKeyText-Objekt mit dem formatierten Text und dem MLKey zurück. Diese Methode wird in den Code-Messages benutzt.
+Gibt ein `MLKeyText`-Objekt mit dem formatierten Text und dem MLKey zurück. Diese Methode wird in den Code-Messages benutzt.
 
 Beispiel:
 
@@ -126,7 +126,7 @@ In der Klasse `cGlobal` gibt es einen zentralen Entry-Point `GlobalGetMLText`. D
 public virtual string GlobalGetMLText(MLKey mlkey, string iso)
 ```
 
-Die Sprach-Hierarchie der Session, welche am GlobalObject hinterlegt ist, wird außerhalb dieser Methode aufgelöst. Besteht die Hierarchie aus mehreren Fallbacks (z.B. `fr, en, de`), wird diese Methode auch ggf. mehrfach nacheinander mit den unterschiedlichen Iso-Codes aufgerufen. Liefert die Methode einen Wert ungleich `null` oder `String.Empty` zurück, wird dieser als Text verwendet und es erfolgt kein weiter Aufruf.
+Die Sprach-Hierarchie der Session, welche am GlobalObject hinterlegt ist, wird außerhalb dieser Methode aufgelöst. Besteht die Hierarchie aus mehreren Fallbacks (z.B. `fr, en, de`), wird diese Methode auch ggf. mehrfach nacheinander mit den unterschiedlichen Iso-Codes aufgerufen. Liefert die Methode einen Wert ungleich `null` oder `String.Empty` zurück, wird dieser als Text verwendet und es erfolgt kein weiterer Aufruf.
 
 Es ist möglich, diese Methode am cGlobal zu überschreiben und die Ermittlung der Texte zu beeinflussen oder zu überwachen.
 

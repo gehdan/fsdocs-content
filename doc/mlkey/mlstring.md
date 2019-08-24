@@ -1,12 +1,26 @@
 # MLString
 
-![MLString Designer](media/mlstring-in-designer.png) ![MLString Property Grid](media/mlstring-in-property-grid.png)
+Framework Studio bietet eine durchgängige Unterstützung für die Mehrsprachigkeit. An allen Stellen, an denen für den Anwender sichtbare Beschriftungen, Tooltips oder Meldungstexte gepflegt werden bietet Framework Studio einen Editor zur Bearbeitung von mehrsprachigen Texten (Multi Language String / **MLString**) an.
 
-**TODO**
+Der Editor wird in Form einer Tabelle angezeigt, in der die Verschiedenen Sprachen des Textes angezeigt und bei Bedarf auch bearbeitet werden.
 
-* Option Sprachen
-* Auswahl-Dialog mit der Option neue MLKeys zu erfassen.
-* dasselbe wie Wörterbuch + Auswählen
+Die **fett gedruckten** Angaben sind an dieser Stelle überschrieben. Die normal gedruckten Angaben sind aus dem Basis-Package oder dem Basis-Record geerbt. Siehe auch Abschnitt [Vererbung](#vererbung).
+
+![MLString Designer](media/mlstring-in-designer.png)
+
+An erster Stelle steht immer der **MLKey**. Dieser stellt einen Verweis auf das [Wörterbuch](woerterbuch.md) dar. Es kann direkt ein MLKey eingeben werden oder mit dem Auswahl-Button ein Such-Dialog geöffnet werden. Dabei handelt es sich um den voll funktionsfähigen [Multilanguage Text Editor](woerterbuch.md#multilanguage-text-editor) erweitert um eine Auswahl-Funktion. In diesem Dialog können, wenn kein passender MLKey gefunden wurde, auch ein neuer Key erfasst werden.
+
+Die Texte in den einzelnen Sprachen werden im Designer und auch zur Laufzeit der Anwendung aus dem Wörterbuch ermittelt. Die angezeigten Sprachen und deren Reihenfolge können in den **Options** mit der Einstellung **Languages in designer** eingestellt werden.
+
+> [!IMPORTANT]
+> Ist ein **MLKey** angegeben, dann ist es davon abzuraten, einzelne Texte zu überschreiben.
+
+Im **Property-Grid** wird der MLString in einer Zeile dargestellt, die zur Anzeige der einzelnen Sprachen erweitert werden kann.
+
+![MLString Property Grid](media/mlstring-in-property-grid.png)
+
+Die einzeilige Anzeige stellt einen kombinierten Text in Format `@{MLKey} - {deutscher Text}` dar. In diesem Text man auch direkt mit vorangestellten `@`-Zeichen einen anderen **MLKey** eintragen - z.B. `@LBL_ArticleID`.
+Ein **MLKey** kann auch (wie oben beschrieben) am entsprechenden MLKey-Eintrag eingetragen oder ausgewählt werden.
 
 ## Vererbung
 

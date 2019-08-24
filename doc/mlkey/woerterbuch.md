@@ -4,13 +4,19 @@ Alle mehrsprachigen Texte der Anwendung werden in einem zentralen Wörterbuch ab
 
 Organisiert werden die Einträge mit einem eindeutigen alphanumerischen Schüssel - dem **MLKey**.
 
+Die MLKeys und deren Texte können folgendermaßen genutzt werden:
+
+1. In den [MLString](mlstring.md)-Properties überall in Framework Studio
+2. Im selbst geschriebenen Methoden-Code (siehe [Programmierung](programmierung.md))
+3. In den Code-Messages (Exceptions, Message-Boxen)
+
 ## Multilanguage Text Editor
 
 Die Bearbeitung des Wörterbuchs erfolgt über den **Multilanguage Text Editor**. Dieser wird über das Menü **Tools / Multilanguage Text Editor** geöffnet.
 
 ![ML-Editor](media/ml-editor.png)
 
-Die im Grid angezeigten Sprachen können in den **Options** mit der Einstellung **Languages in designer** eingestellt werden.
+Die im Grid angezeigten Sprachen und deren Reihenfolge können in den **Options** mit der Einstellung **Languages in designer** eingestellt werden.
 
 Die Bearbeitung des Wörterbuchs funktioniert ohne Checkout-Mechanismus. Wenn mehrere Benutzer zur gleichen Zeit an denselben MLKeys arbeiten sollten, dann gewinnt derjenige, der zuletzt den Button **Save** drückt.
 
@@ -30,7 +36,7 @@ Essentiell für die tägliche Arbeit ist das Auffinden von existierenden MLKeys.
 Ziel des Wörterbuches ist es, Texte wiederzuverwenden und die Anzahl der Einträge auf das Nötigste zu reduzieren. Aus diesem Grund sollte man immer zuerst nach einem MLKey suchen, bevor man einen neuen erfasst. Zu einem logischen Begriff sollen keine zwei MLKeys existieren.
 
 > [!TIP]
-> Die Suche sollte durchaus kreativ gestaltet werden - besonders bei Texten die eigentlich schon vorhanden sein müssten. Ein Beispiel dafür ist das Wort `Einfügen`. Möchte man dieses mit der englischen Bezeichnung `Add` nutzen, stellt man fest, dass es `Einfügen` schon mit mehreren Übersetzungen gibt, jedoch nicht mit der englischen Bezeichnung `Add`. Sucht man dann aber nach `Add`, so wird man den zu verwendenden deutschen Text 'Hinzufügen' finden.
+> Die Suche sollte durchaus kreativ gestaltet werden - besonders bei Texten die eigentlich schon vorhanden sein müssten. Ein Beispiel dafür ist das Wort `Einfügen`. Möchte man dieses mit der englischen Bezeichnung `Add` nutzen, stellt man fest, dass es `Einfügen` schon mit mehreren Übersetzungen gibt, jedoch nicht mit der englischen Bezeichnung `Add`. Sucht man dann aber nach `Add`, so wird man den zu verwendenden deutschen Text `Hinzufügen` finden.
 
 ## Erfassen neuer MLKeys
 
