@@ -47,7 +47,9 @@
     ],
     "dest": "_site",
     "template": [
-      "default"
+      "default",
+      "templates/memberpage.2.45.0/content",
+      "templates/frameworkstudio/content"
     ],
     "postProcessors": [
       "ExtractSearchIndex"
