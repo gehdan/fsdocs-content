@@ -88,7 +88,7 @@ Die folgende Auflistung beinhaltet diejenigen Properties und Events, die an alle
 
 ## Wrap Panel
 
-### ### Properties
+### Properties
 
 |Name|Unterstützt|
 |---|:-:|
@@ -172,7 +172,7 @@ Properties
 |SymbolImage|-|
 |TabStop|+|
 
-### ### Events
+### Events
 
 |Name|Unterstützt|
 |---|:-:|
