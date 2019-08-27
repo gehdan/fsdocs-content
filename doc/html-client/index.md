@@ -4,7 +4,7 @@ Neben dem Java Client bietet Framework Studio auch einen HTML-Client für Deskto
 
 ## Aktivieren des HTML-Clients
 
-Damit der HTML-Client über den Run Wizard und die Broker-Startseite gestartet werden kann, muss in der [Application](todo/application.md) die Checkbox Supports Html Client gesetzt werden.
+Damit der HTML-Client über den Run Wizard und die Broker-Startseite gestartet werden kann, muss in der [Application](../application/application.md) die Checkbox Supports Html Client gesetzt werden.
 
 ![Application](media/application-supports-html-client.png)
 
@@ -30,7 +30,7 @@ Auch alle weiteren Browser, basierend auf der Chromium-Engine (Opera, Vivaldi), 
 
 ### Mobile Endgeräte
 
-Eine auf den HTML-Client ausgelegte Applikation kann über die Broker-Starteite natürlich auch von einem beliebigen mobilen Gerät aus gestartet werden, welches über einen aktuellen Browser verfügt. Die Unterstützung der Browser im mobilen Umfeld ist sehr schwer zu beurteilen, da es gerade auf Android eine extrem große Auswahl gibt.
+Eine auf den HTML-Client ausgelegte Applikation kann über die Broker-Startseite natürlich auch von einem beliebigen mobilen Gerät aus gestartet werden, welches über einen aktuellen Browser verfügt. Die Unterstützung der Browser im mobilen Umfeld ist sehr schwer zu beurteilen, da es gerade auf Android eine extrem große Auswahl gibt.
 
 **Wir empfehlen deshalb folgende mobilen Browser**:
 

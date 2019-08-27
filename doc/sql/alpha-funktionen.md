@@ -22,7 +22,7 @@ Schneidet die rechten Leerzeichen der Zeichenkette ab.
 
 ## `REPLACE ( <text>, <search text>, <replace text> )`
 
-Ersetzt im übergenenen Text den Search-Text durch Replace-Text.
+Ersetzt im übergebenen Text den Search-Text durch Replace-Text.
 
 ## `SUBSTRING ( <text>, <number start>, <number length> )`
 

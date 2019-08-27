@@ -10,7 +10,7 @@ Dies hat zur Folge, dass Broker-Sessions, die von einem HTML-Client aus gestarte
 
 Um dem Verbrauch von Lizenzen entgegen zu wirken, wird im HTML-Client eine ClientID generiert, die den Browser bzw. das mobile Gerät identifiziert und mit zum Broker geschickt wird.
 
-Im Browser ist die ClientID eine UUIDv4, die im Code generiert wird, auf mobielen Geräten wird die Cordova-Geräte-ID herangezogen.
+Im Browser ist die ClientID eine UUIDv4, die im Code generiert wird, auf mobilen Geräten wird die Cordova-Geräte-ID herangezogen.
 
 Über die ClientID kann der Broker den Browser bzw. das mobile Gerät identifizieren und bei einem erneuten Start einer Anwendung diesem die bisherige Lizenz zuordnen.
 

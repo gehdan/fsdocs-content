@@ -41,7 +41,7 @@ Rundet eine Zahl ab.
 
 Natürlicher Logarithmus einer Fließkommazahl.
 
-## `LOG10 ( <Foat Expression> )`
+## `LOG10 ( <Float Expression> )`
 
 Logarithmus mit der Basis 10.
 
