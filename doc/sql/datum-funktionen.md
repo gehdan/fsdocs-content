@@ -42,7 +42,7 @@ Addiert die übergebenen Monate zu einem Datum/Zeit-Ausdruck.
 
 | |Umsetzung des Statements auf den verschiedenen Datenbanken|
 |-|-|
-|SQL-Server | `DATEADD ( MOMTH, <Months>, <Date Expression> )` |
+|SQL-Server | `DATEADD ( MONTH, <Months>, <Date Expression> )` |
 |Oracle     | `ADD_MONTHS ( <Date Expression>, <Months> )` |
 
 ## `DAYS_BETWEEN (<Start-Date>, <End-Date>)`

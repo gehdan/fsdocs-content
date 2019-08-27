@@ -13,8 +13,6 @@ In Kunden-Umgebungen ist die Umstellung der eigenen Texte auf MLKeys nicht zwing
 
 ## MLKeys zuordnen
 
-**TODO**
-
 Im Customizing kann man grundsätzlich 2 verschiedene Arten von überschriebenen Texten unterscheiden:
 
 1. Texte, die eine ganz neue Bedeutung haben.

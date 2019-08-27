@@ -2,7 +2,7 @@
 
 ## `CHAR_TO_DATE ( <Expression>, <format-Number>)`
 
-Wandelt eine Zeichen-Kette in ein Datum um. Dabei wird das angegegene Format verwendet. Die Format-Nummer muss als konstante Zahl übergeben werden. Sie kann folgende Werte haben:
+Wandelt eine Zeichen-Kette in ein Datum um. Dabei wird das angegebene Format verwendet. Die Format-Nummer muss als konstante Zahl übergeben werden. Sie kann folgende Werte haben:
 
 |Number    | Format YY                   |Format YYYY   |
 |----------|-----------------------------|--------------|

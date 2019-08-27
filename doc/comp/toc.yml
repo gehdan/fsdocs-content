@@ -1,2 +1,3 @@
-- name: Components
-  href: components.md
+items:
+  - name: Components
+    href: components.md

@@ -1,7 +1,12 @@
+items:
 - name: HTML-Client (Beta)
   href: index.md
   items:
     - name: Android App
-      href: adroid-app.md
+      href: android-app.md
     - name: Hinweise zu Lizenzen
       href: lizenzen.md
+    - name: Funktionsumfang
+      href: funktionsumfang.md
+    - name: Controls
+      href: controls.md
