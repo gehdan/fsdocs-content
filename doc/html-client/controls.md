@@ -140,7 +140,6 @@ Properties
 
 |Name|Unterstützt|
 |---|:-:|
-|IsSearchButton|-|
 |ShowCaption|+|
 |TabStop|+|
 

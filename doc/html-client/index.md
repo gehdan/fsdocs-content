@@ -23,10 +23,10 @@ Der HTML-Client basiert auf modernster Webtechnologie und benötigt deshalb auch
 * Edge
 * Safari (OSX)
 
-Auch alle weiteren Browser, basierend auf der Chromium-Engine (Opera, Vivaldi), sollten problemlos funktionieren.
+Auch alle weiteren Browser, basierend auf der Chromium-Engine (Opera, Vivaldi), funktionieren problemlos.
 
 > [!NOTE]
-> Der immer noch weit verbreitete Internet Explorer 11 kann den HTML-Client zwar ausführen, auf Grund seiner mangelhaften Performance können wir ihn aber absolut nicht mehr empfehlen.
+> Internet Explorer 11 kann auf Grund der betagten JavaScript-Engine nicht mehr verwendet werden.
 
 ### Mobile Endgeräte
 
