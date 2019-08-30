@@ -1,4 +1,4 @@
-# dbRun_Config (Business-Tabelle)
+# dbRun_Config (Business-Datenbank)
 
 Diese Tabelle beinhaltet die Konfigurationen für den automatischen Datenbank-Update.
 
