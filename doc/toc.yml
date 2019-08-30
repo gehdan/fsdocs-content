@@ -25,6 +25,11 @@ items:
 - name: Metadatentypen
   href: mdt/ 
 
+- name: Database
+  items:
+    - name: ML-Column
+      href: database/ml-column.md
+
 - name: Components
   href: comp/
 
@@ -47,6 +52,15 @@ items:
       href: sql/cast-funktionen.md
     - name: Aggregat-Funktionen
       href: sql/aggr-funktionen.md
+
+- name: Datenbank-Tabellen
+  items:
+    - name: dbRun_Config (Business)
+      href: tables/dbrun_config.md
+    - name: dbRun_MLStrings (Business)
+      href: tables/dbrun_mlstrings.md
+    - name: ML_Config (Business)
+      href: tables/ml_config.md
 
 - name: HTML-Client
   href: html-client/
