@@ -74,13 +74,13 @@ Mit dem Button **Add** öffnet sich ein Dialog, in dem der neue MLKey erfasst we
 
 * Button **Untranslatable**: Es gibt Texte, die nicht übersetzt werden können wie z.B. Eigennamen oder Einheiten. Dieser Button löscht alle Fremdsprachen-Texte und Schreibt den Text `untranslatable` in das **Comment** Feld.
 
-  Mitt der Routine [MLKeys Cleanup](mlkey-cleanup.md) kann diese Aktion systematisch für das komplette Wörterbuch ausgeführt werden.
+  Mit der Routine [MLKeys Cleanup](mlkey-cleanup.md) kann diese Aktion systematisch für das komplette Wörterbuch ausgeführt werden.
 
 ## Bearbeiten von MLKeys
 
 Mit dem Button Edit wird für den selektierten MLKey der Bearbeitungs-Dialog geöffnet.
 
-Durch einen Doppelklick in das Grid kann der Bearbeitungs-Dialog ebenfalls geöffnet werden. Dabei wird der Fokus automatisch in das Feld gesetzt, dass der angeklickten Grid-Zelle entspricht. Das ist praktisch, wenn man z.B. gezielt eine Fremdsprache bearbeiten möchte.
+Durch einen Doppelklick in das Grid kann der Bearbeitungs-Dialog ebenfalls geöffnet werden. Dabei wird der Fokus automatisch in das Feld gesetzt, das der angeklickten Grid-Zelle entspricht. Das ist praktisch, wenn man z.B. gezielt eine Fremdsprache bearbeiten möchte.
 
 Außerdem können einzeilige Texte direkt im Grid bearbeitet werden.
 
