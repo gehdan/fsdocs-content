@@ -103,6 +103,8 @@ Wird im Customizing-Package ein MLKey aus dem Basis-Package geöffnet, dann sind
 
 Die Texte können bearbeitet werden.
 
+Mit dem Button **View History** wird ein weiteres Fenster geöffnet, in dem die Version des Eintrages vor der letzten Bearbeitung angezeigt wird. Siehe [Abschnitt History](#history).
+
 ## Copy Entry / Paste Entry
 
 Wenn man ein oder mehrere Einträge selektiert hat, kann man mit dem Button **Copy Entry** diese in die Zwischenablage kopieren. Mit dem Button **Paste Entry** können diese Einträge z.B. in einer anderen Version des Packages eingefügt werden.
@@ -132,3 +134,27 @@ Jedes Customizing-Package verwaltet sein eigenes Wörterbuch.
     Es muss darauf geachtet werden, dass die Bedeutung des MLKeys nicht geändert wird, weil dieser ggf. an mehreren Stellen in der Anwendung verwendet wird. Wird an einer bestimmten Stelle in der Anwendung ein anderer Text benötigt (in eNVenta kann das z.B. der Text "Code1" sein, der ersetzt werden soll) dann muss an dieser Stelle (jedoch möglichst weit unten in der DBColumn oder Metadatentyp) ein anderer MLKey zugeordnet werden. (siehe auch [MLString-Vererbung](mlstring.md#vererbung))
 
 Im Customizing-Package übersetzte Texte können [exportiert](import-export.md) und in das Basis-Package importiert werden. Zu einem späteren Zeitpunkt können die dann redundanten Übersetzung mit der [MLKeys Cleanup](mlkey-cleanup.md) Routine bereinigt werden.
+
+## History
+
+Bei jeder Bearbeitung im Wörterbuch wird die Vorgänger-Version des MLKeys in einen separaten History-Bereich geschrieben.
+
+Aus dem [Edit-Dialog](#bearbeiten-von-mlkeys) heraus kann diese Information mit dem Button **View History** geöffnet werden. Gibt es keine Informationen, ist der Button deaktiviert.
+
+Die History arbeitet pro Sprache. Wird z.B. der englische Text bearbeitet, wird auch nur der alte englische Text mit seinem alten Änderungs-Datum in den History-Bereich übertragen. Die History-Informationen der anderen Sprachen bleiben unverändert.
+
+Eine Besonderheit ist der deutsche Text. Dieser wird intern zusammen mit dem **Comment** und der **Obsolete-Message** gespeichert. Ändert man eine dieser Informationen, dann werden alle gemeinsam in den History-Bereich übertragen.
+
+Wird ein **MLKey gelöscht**, wird der komplette Eintrag mit allen Sprachen in die History übertragen. Dieser kann jedoch zu einem späteren Zeitpunkt nicht mehr ohne weiteres gegriffen werden.
+
+> [!TIP]
+>
+> Wurde ein MLKey versehentlich gelöscht und es gibt einen Compile-Error mit dem entsprechenden MLKey, dann kann man diesen Eintrag wieder neu im Wörterbuch anlegen. Beim anschließenden Bearbeiten des MLKeys können dann die History-Informationen eingesehen werden.
+
+Gefüllt wird die History mit dem **Save**-Button. Framework Studio sammelt alle im Wörterbuch vorgenommenen Änderungen und speichert diese mit dem **Save**-Button in einem Rutsch. Dadurch kann ein Text auch mehrfach hintereinander geändert werden. Erst nach dem Save steht der alte Text in der History.
+
+> [!NOTE]
+>
+> * Beim Labeln der Package-Version wird die History-Information nicht in die neue Package-Version übernommen.
+>
+> * Die History-Informationen berücksichtigen nur das aktuelle Package. Weil für Basis-Packages das Wörterbuch aus dem letzten Framework-Compiler-Stand gelesen wird, enthält es keine History-Informationen.
