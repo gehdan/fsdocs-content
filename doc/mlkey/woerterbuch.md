@@ -30,7 +30,7 @@ Essentiell für die tägliche Arbeit ist das Auffinden von existierenden MLKeys.
 Ziel des Wörterbuches ist es, Texte wiederzuverwenden und die Anzahl der Einträge auf das Nötigste zu reduzieren. Aus diesem Grund sollte man immer zuerst nach einem MLKey suchen, bevor man einen neuen erfasst. Zu einem logischen Begriff sollen keine zwei MLKeys existieren.
 
 > [!TIP]
-> Die Suche sollte durchaus kreativ gestaltet werden - besonders bei Texten die eigentlich schon vorhanden sein müssten. Ein Beispiel dafür ist das Wort `Einfügen`. Möchte man dieses mit der englischen Bezeichnung `Add` nutzen, stellt man fest, dass es `Einfügen` schon mit mehreren Übersetzungen gibt, jedoch nicht mit der englischen Bezeichnung `Add`. Sucht man dann aber nach `Add`, so wird man den zu verwendenden deutschen Text 'Hinzufügen' finden.
+> Die Suche sollte durchaus kreativ gestaltet werden - besonders bei Texten die eigentlich schon vorhanden sein müssten. Ein Beispiel dafür ist das Wort `Einfügen`. Möchte man dieses mit der englischen Bezeichnung `Add` nutzen, stellt man fest, dass es `Einfügen` schon mit mehreren Übersetzungen gibt, jedoch keine mit der englischen Bezeichnung `Add`. Sucht man dann aber direkt nach `Add`, so findet man den statt `Einfügen` zu verwendenden deutschen Text `Hinzufügen`.
 
 ## Erfassen neuer MLKeys
 
