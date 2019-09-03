@@ -6,97 +6,123 @@ Die Options können in der IDE über den Menüeintrag **Tools / Options** geöff
 
 ![Register IDE](media/options-ide.png)
 
+### Login
+
+* **Get DLLs**
+
+    Mit der Checkbox **Enable option 'Include Debug DLLs' by default** wird im Login dafür gesorgt, dass beim Get DLLs die vom Framework Compiler erzeugten Debug-Informationen gezogen werden. Das beinhaltet (soweit vorhanden) die Debug-Informationen der Basis-Packages.
+
 ### Appearance
 
-**Error Display**:
+* **Error Display**
 
-Wird die Checkbox **Legacy Error Window** gesetzt, kann erzwungen werden, dass die Errors in derselben Art und Weise ausgegeben werden, wie es bis Framework Studio 2.6 der Fall war.
+    Wird die Checkbox **Legacy Error Window** gesetzt, kann erzwungen werden, dass die Errors in derselben Art und Weise ausgegeben werden, wie es bis Framework Studio 2.6 der Fall war.
 
-**Background Image**:
+* **Background Image**
 
-Wird die Checkbox **Disable** gesetzt, wird in der Framework Studio Umgebung kein Hintergrundbild mehr angezeigt. Dies kann zu einer Performancesteigerung bei Remote Sessions beitragen (z.B. VNC).
+    Wird die Checkbox **Disable** gesetzt, wird in der Framework Studio Umgebung kein Hintergrundbild mehr angezeigt. Dies kann zu einer Performancesteigerung bei Remote Sessions beitragen (z.B. VNC).
 
-**Documentation Indicators**:
+* **Documentation Indicators**
 
-Zeigt an den Controls im Form-Designer an, ob eine Dokumentation gepflegt ist, bzw vererbt wurde.
+    Zeigt an den Controls im Form-Designer an, ob eine Dokumentation gepflegt ist, bzw vererbt wurde.
 
-![Doc Indicators](../documentation/media/documentation-indicators.png)
+    ![Doc Indicators](../documentation/media/documentation-indicators.png)
 
-**Show form designer grid**:
+* **Form Control DoubleClick**
 
-Gibt an, ob im Form-Designer das Raster-Grid angezeigt werden soll. Bei der Arbeit über Remote Desktop kann dieses Grid die Performance sehr stark verschlechtern.
+    Gibt an, was im Form-Designer passieren soll, wenn auf ein Control Strg + Doppelklick ausgeführt wird.
+
+  * RadioButton **Show Control Events**: Zeigt den Events-Dialog für das Control an. Diese Options ist sinnvoll für normale Entwickler. Der Documentation-Editor kann über das Context-Menü des Control geöffnet werden.
+
+  * RadionButton **Show Documentation**: Zeigt den Documentation-Editor für das Control an. Diese Option ist sinnvoll für Benutzer, die viel an Dokumantationen arbeiten. Die Control-Events können über das Context-Menü des Control geöffnet werden.
+
+* **Show form designer grid**
+
+    Gibt an, ob im Form-Designer das Raster-Grid angezeigt werden soll. Bei der Arbeit über Remote Desktop kann dieses Grid die Performance sehr stark verschlechtern.
+
+* **Languages in designer**
+
+    Hier können die Sprachen eingestellt werden, die in den [MLStrings](../mlkey/mlstring.md) und im [Wörterbuch](../mlkey/woerterbuch.md) angeboten werden sollen. Die Reihenfolge wird - sofern dies möglich ist - von den Designer-Fenstern berücksichtigt.
+
+    Es werden kommasepariert die Iso-Codes der Sprachen angegeben - z.B. `de,en,fr`.
+
+    Wird keine Angabe gemacht, werden in allen Designer-Fenstern immer alle verfügbaren Sprachen angeboten.
 
 ### Code Editor
 
-**Font Family**:
+* **Font Family**
 
-Hier können Schriftart und -größe für den Code-Editor angepasst werden.
+    Hier können Schriftart und -größe für den Code-Editor angepasst werden.
 
-**Context Tooltip**:
+* **Go to Definition with Ctrl+DoubleClick**
 
-Gibt an, ob im Code-Editor Informationen zu Elementen angezeigt werden sollen, wenn mit der Maus auf Code-Teile gezeigt wird.
+    Schaltet im Code-Editor die Funktion **Go to Definition** (F12) mit Strg + Doppelklick ein. Es kann sinnvoll sein, diese Funktion zu deaktivieren, wenn man diese Funktion öfters aus Versehen auslöst. Dann bleibt immer noch die F12-Taste oder das Context-Menü zum Aufruf dieser Funktion.
+
+* **Context Tooltip**
+
+    Gibt an, ob im Code-Editor Informationen zu Elementen angezeigt werden sollen, wenn mit der Maus auf Code-Teile gezeigt wird.
 
 ## Compile / Debug (Registerkarte)
 
 ![Register Compile](media/options-compile.png)
 
-**Application Pool**:
+* **Broker Port**
 
-Gibt den Application-Pool im IIS an, in dem der Development-Broker laufen soll. Beim Starten von Applications aus Framework Studio heraus werden im IIS automatisch virtuelle Verzeichnisse erzeugt. Diesen wird der hier angegebene Application-Pool zugewiesen.
+    Standard Broker Port. Wird `0` eingetragen, wird automatisch ein freier Port genutzt.
 
-**Broker Rootdirectory**:
+* **Host Port**
 
-Gibt an, unter welchem Ordner Framework Studio die Verzeichnisse für den Development-Broker erzeugen soll. Diese Einstellung wird automatisch von Framework Studio gesetzt und kann nicht geändert werden.
+    Standard Broker Port. Wird `0` eingetragen, wird automatisch ein freier Port genutzt.
 
-**Broker Port**:
+* **Compile Rootdirectory**
 
-Standard Broker Port. Wird `0` eingetragen, wird automatisch ein freier Port genutzt.
+    Gibt an, unter welchem Ordner Framework Studio die Compile-Verzeichnisse erzeugen soll. Diese Einstellung muss manuell in der Datei `FrameworkStudio.exe.config` angepasst werden.
 
-**Host Port**:
+    Beispiel:
 
-Standard Broker Port. Wird `0` eingetragen, wird automatisch ein freier Port genutzt.
+    ```xml
+    <configuration>
+        <appSettings>
+            <add key="CompileBaseDirectory" value="C:\FS\Compile42" />
+            [...]
+    ```
 
-**Compile Rootdirectory**:
+* **Visual Studio Path**
 
-Gibt an, unter welchem Ordner Framework Studio die Compile-Verzeichnisse erzeugen soll. Diese Einstellung muss manuell in der Datei FrameworkStudio_3_X.exe.config angepasst werden.
+    Hier kann angegeben werden, wo Visual Studio installiert ist. Die aktuell von Framework Studio unterstützten Versionen von Visual Studio werden automatisch erkannt. Wenn eine andere Version oder Edition (z.B. Visual Studio Express) verwendet werden soll, kann das entsprechende Programm angegeben werden.
 
-**Visual Studio Path**:
+    Mit dem Button **Reset** wird der Wert auf die Original-Einstellung zurückgesetzt. Diese Einstellung wird für das Menu **View /  Compiled Code in Visual Studio** in den Designer-Fenstern verwendet.
 
-Hier kann angegeben werden, wo Visual Studio installiert ist. Die aktuell von Framework Studio unterstützten Versionen von Visual Studio werden automatisch erkannt. Wenn eine andere Version oder Edition (z.B. Visual Studio Express) verwendet werden soll, kann das entsprechende Programm angegeben werden.
+    Außerdem wird der Ordner aus dieser Einstellung verwendet, um für die Arbeit mit Services das Programm WcfTestClient.exe zu finden.
 
-Mit dem Button **Reset** wird der Wert auf die Original-Einstellung zurückgesetzt.
-Diese Einstellung wird für das Menu **View /  Compiled Code in Visual Studio** in den Designer-Fenstern verwendet.
+* **Visual Studio Arguments**
 
-Außerdem wird der Ordner aus dieser Einstellung verwendet, um für die Arbeit mit Services das Programm WcfTestClient.exe zu finden.
+    Hier können die Kommandozeilen-Argumente für das Öffnen der Quellcode-Dateien angegeben werden. Beim Einsatz von Visual Studio können die Standard-Einstellungen `%file% /Edit` beibehalten werden.
 
-**Visual Studio Arguments**:
-
-Hier können die Kommandozeilen-Argumente für das Öffnen der Quellcode-Dateien angegeben werden. Beim Einsatz von Visual Studio können die Standard-Einstellungen `%file% /Edit` beibehalten werden.
-
-Der Platzhalter `%file%` steht für die zu öffnenden Dateien. Dieser werden in dem Format `"Datei1.cs" "Datei2.cs"…` übergeben. Wenn dieser Platzhalter nicht angegeben ist, dann werden die Dateien an der Parameter gestellt.
+    Der Platzhalter `%file%` steht für die zu öffnenden Dateien. Dieser werden in dem Format `"Datei1.cs" "Datei2.cs"…` übergeben. Wenn dieser Platzhalter nicht angegeben ist, dann werden die Dateien an der Parameter gestellt.
 
 ## Utilities (Registerkarte)
 
 ![Register Utilities](media/options-utilities.png)
 
-**SvcUtil**:
+* **SvcUtil**
 
-Gibt den Pfad zur SvcUtil.exe des Windows SDK an. Diese wird für die Generierung des Services verwendet.
+    Gibt den Pfad zur SvcUtil.exe des Windows SDK an. Diese wird für die Generierung des Services verwendet.
 
-**InstallUtil**:
+* **InstallUtil**
 
-Gibt den Pfad zur InstallUtil.exe des .NET-Frameworks an.
+    Gibt den Pfad zur InstallUtil.exe des .NET-Frameworks an.
 
-**Crystal Report Designer**:
+* **Crystal Report Designer**
 
-Gibt den Pfad zum Crystal Report Designer an.
+    Gibt den Pfad zum Crystal Report Designer an.
 
-**Diff Tool**:
+* **Diff Tool**
 
-Hier kann die ausführbare Datei für das Diff Tool angegeben werden.
+    Hier kann die ausführbare Datei für das Diff Tool angegeben werden.
 
-**Diff Tool Data Dir**:
+* **Diff Tool Data Dir**
 
-Hier kann das Datenverzeichnis für das Diff Tool angegeben werden.
+    Hier kann das Datenverzeichnis für das Diff Tool angegeben werden.
 
 Mit dem Button [...]  kann jeweils ein Dateiauswahldialog geöffnet werden.

@@ -1,6 +1,7 @@
 {
     "cSpell.language": ",de,en",
     "cSpell.words": [
+        "Strg",
         "arial",
         "ausgegrauten",
         "dateadd",
@@ -13,8 +14,8 @@
         "f",
         "frameworkstudio",
         "getdate",
-        "getutcdate",
         "getguid",
+        "getutcdate",
         "likeescape",
         "ltrim",
         "memberpage",
