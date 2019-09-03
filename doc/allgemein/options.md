@@ -32,9 +32,9 @@ Die Options können in der IDE über den Menüeintrag **Tools / Options** geöff
 
     Gibt an, was im Form-Designer passieren soll, wenn auf ein Control Strg + Doppelklick ausgeführt wird.
 
-  * RadioButton **Show Control Events**: Zeigt den Events-Dialog für das Control an. Diese Options ist sinnvoll für normale Entwickler. Der Documentation-Editor kann über das Context-Menü des Control geöffnet werden.
+  * RadioButton **Show Control Events**: Zeigt den Events-Dialog für das Control an. Diese Option ist sinnvoll für normale Entwickler. Der Documentation-Editor kann über das Context-Menü des Controls geöffnet werden.
 
-  * RadionButton **Show Documentation**: Zeigt den Documentation-Editor für das Control an. Diese Option ist sinnvoll für Benutzer, die viel an Dokumantationen arbeiten. Die Control-Events können über das Context-Menü des Control geöffnet werden.
+  * RadionButton **Show Documentation**: Zeigt den Documentation-Editor für das Control an. Diese Option ist sinnvoll für Benutzer, die viel an Dokumentationen arbeiten. Die Control-Events können über das Context-Menü des Controls geöffnet werden.
 
 * **Show form designer grid**
 
