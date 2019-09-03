@@ -1,6 +1,9 @@
 items:
 - name: Allgemein
   href: index.md
+  items:
+   - name: Options
+     href: allgemein/options.md
 
 - name: Metadatentypen
   href: mdt/ 
