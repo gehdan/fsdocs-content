@@ -75,11 +75,11 @@ Beispiele:
 
 **`LBL_{englische Bezeichnung}_Mini`**
 
-Wird ein MiniButton (Constrol Style = MiniEmpty) auf einer Maske mit einer Caption von 1 bis 2 Buchstaben versehen (die typischerweise eine Abkürzung darstellen), so wird der MLKey dazu mit der eigentlichen Bezeichnung, ergänzt um **`_Mini`** beschriftet. Dabei ist darauf zu achten, dass die Beschriftungen pro Sprache eindeutig sind.
+Wird ein MiniButton (Control Style = MiniEmpty) auf einer Maske mit einer Caption von 1 bis 2 Buchstaben versehen (die typischerweise eine Abkürzung darstellen), so wird der MLKey dazu mit der eigentlichen Bezeichnung, ergänzt um **`_Mini`** beschriftet. Dabei ist darauf zu achten, dass die Beschriftungen pro Sprache eindeutig sind.
 
 Beispiele:
 
-* `LBL_Custoner_Mini` (de = „K“, en = „Cu“)
+* `LBL_Customer_Mini` (de = „K“, en = „Cu“)
 * `LBL_CrossOver_Mini` (de = „C“, en = „Cr“)
 
 ### Zwei unterschiedliche deutsche Begriffe, die im Englischen gleich heißen

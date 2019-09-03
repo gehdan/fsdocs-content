@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="38.000000px" height="38.000000px" viewBox="0 0 26 26">
+
+<g stroke="none" transform="translate(0,5.5)">
+    <rect fill="#aaaaaa" x="0" y="3" width="13" height="9" />
+    <rect fill="#efefef" x="10" y="0" width="13" height="9" />
+    <rect fill="#3e437a" x="13" y="6" width="13" height="9" />
+    <rect fill="#9b98b4" x="13" y="6" width="10" height="3" />
+    <rect fill="#cecece" x="10" y="3" width="3" height="3" />
+</g>
+</svg>

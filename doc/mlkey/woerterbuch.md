@@ -4,13 +4,19 @@ Alle mehrsprachigen Texte der Anwendung werden in einem zentralen Wörterbuch ab
 
 Organisiert werden die Einträge mit einem eindeutigen alphanumerischen Schüssel - dem **MLKey**.
 
+Die MLKeys und deren Texte können folgendermaßen genutzt werden:
+
+1. In den [MLString](mlstring.md)-Properties überall in Framework Studio
+2. Im selbst geschriebenen Methoden-Code (siehe [Programmierung](programmierung.md))
+3. In den Code-Messages (Exceptions, Message-Boxen)
+
 ## Multilanguage Text Editor
 
 Die Bearbeitung des Wörterbuchs erfolgt über den **Multilanguage Text Editor**. Dieser wird über das Menü **Tools / Multilanguage Text Editor** geöffnet.
 
 ![ML-Editor](media/ml-editor.png)
 
-Die im Grid angezeigten Sprachen können in den **Options** mit der Einstellung **Languages in designer** eingestellt werden.
+Die im Grid angezeigten Sprachen und deren Reihenfolge können in den [Options](../allgemein/options.md) mit der Einstellung **Languages in designer** eingestellt werden.
 
 Die Bearbeitung des Wörterbuchs funktioniert ohne Checkout-Mechanismus. Wenn mehrere Benutzer zur gleichen Zeit an denselben MLKeys arbeiten sollten, dann gewinnt derjenige, der zuletzt den Button **Save** drückt.
 
@@ -70,6 +76,8 @@ Mit dem Button **Add** öffnet sich ein Dialog, in dem der neue MLKey erfasst we
 
 * **Fremdsprachen**: Über die Radio-Buttons kann festgelegt werden, welche Sprache im 2. Textfeld angezeigt oder bearbeitet werden soll. Diese Texte sind optional.
 
+  Die angebotenen Fremdsprachen und deren Reihenfolge kann in den [Options](../allgemein/options.md) mit der Einstellung **Languages in designer** eingestellt werden. **German** lässt sich in diesem Dialog aber nicht steuern - diese Sprache wird immer im separaten Feld angezeigt.
+
   In der **eNVenta/WS** Standard-Entwicklung muss der englische Text gepflegt werden.
 
 * Button **Untranslatable**: Es gibt Texte, die nicht übersetzt werden können wie z.B. Eigennamen oder Einheiten. Dieser Button löscht alle Fremdsprachen-Texte und Schreibt den Text `untranslatable` in das **Comment** Feld.
@@ -96,6 +104,8 @@ Der **MLKey** kann nicht bearbeitet werden.
 Wird im Customizing-Package ein MLKey aus dem Basis-Package geöffnet, dann sind einige weitere Felder für die Bearbeitung gesperrt: **Comment** / Button **Untranslatable**, **Obsolete**
 
 Die Texte können bearbeitet werden.
+
+Mit dem Button **View History** wird ein weiteres Fenster geöffnet, in dem die Version des Eintrages vor der letzten Bearbeitung angezeigt wird. Siehe [Abschnitt History](#history).
 
 ## Copy Entry / Paste Entry
 
@@ -126,3 +136,27 @@ Jedes Customizing-Package verwaltet sein eigenes Wörterbuch.
     Es muss darauf geachtet werden, dass die Bedeutung des MLKeys nicht geändert wird, weil dieser ggf. an mehreren Stellen in der Anwendung verwendet wird. Wird an einer bestimmten Stelle in der Anwendung ein anderer Text benötigt (in eNVenta kann das z.B. der Text "Code1" sein, der ersetzt werden soll) dann muss an dieser Stelle (jedoch möglichst weit unten in der DBColumn oder Metadatentyp) ein anderer MLKey zugeordnet werden. (siehe auch [MLString-Vererbung](mlstring.md#vererbung))
 
 Im Customizing-Package übersetzte Texte können [exportiert](import-export.md) und in das Basis-Package importiert werden. Zu einem späteren Zeitpunkt können die dann redundanten Übersetzung mit der [MLKeys Cleanup](mlkey-cleanup.md) Routine bereinigt werden.
+
+## History
+
+Bei jeder Bearbeitung im Wörterbuch wird die Vorgänger-Version des MLKeys in einen separaten History-Bereich geschrieben.
+
+Aus dem [Edit-Dialog](#bearbeiten-von-mlkeys) heraus kann diese Information mit dem Button **View History** geöffnet werden. Gibt es keine Informationen, ist der Button deaktiviert.
+
+Die History arbeitet pro Sprache. Wird z.B. der englische Text bearbeitet, wird auch nur der alte englische Text mit seinem alten Änderungs-Datum in den History-Bereich übertragen. Die History-Informationen der anderen Sprachen bleiben unverändert.
+
+Eine leere Eigenschaft wird nicht historisiert - das gilt insbes. für **Comment** und **Obsolete Message**. Wird eine dieser Eigenschaften geleert, dann verbleibt der alte Text auch dann in der History, wenn später wieder ein neuer Text gesetzt wird.
+
+Wird ein **MLKey gelöscht**, wird der komplette Eintrag mit allen Sprachen in die History übertragen. Dieser kann jedoch zu einem späteren Zeitpunkt nicht mehr ohne weiteres gegriffen werden.
+
+> [!TIP]
+>
+> Wurde ein MLKey versehentlich gelöscht und es gibt einen Compile-Error mit dem entsprechenden MLKey, dann kann man diesen Eintrag wieder neu im Wörterbuch anlegen. Beim anschließenden Bearbeiten des MLKeys können dann die noch existierenden History-Informationen eingesehen werden.
+
+Gefüllt wird die History mit dem **Save**-Button. Framework Studio sammelt alle im Wörterbuch vorgenommenen Änderungen und speichert diese mit dem **Save**-Button in einem Rutsch. Dadurch kann ein Text auch mehrfach hintereinander geändert werden. Erst nach dem Save steht der alte Text in der History.
+
+> [!NOTE]
+>
+> * Beim Labeln der Package-Version wird die History-Information nicht in die neue Package-Version übernommen.
+>
+> * Die History-Informationen berücksichtigen nur das aktuelle Package. Weil für Basis-Packages das Wörterbuch aus dem letzten Framework-Compiler-Stand gelesen wird, enthält es keine History-Informationen.
