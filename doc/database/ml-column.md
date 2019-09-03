@@ -6,6 +6,9 @@ Eine beliebige Tabellen-Spalte, in der eine Zeichenkette abgelegt ist, kann im T
 
 Ist eine Tabellen-Spalte als **MLColumn** gekennzeichnet, dann werden die fremdsprachigen Texte in der Tabelle [dbRun_MLStrings](../tables/dbrun_mlstrings.md) abgelegt. Die normale Tabellen-Spalte beinhaltet die Texte in Default-Sprache.
 
+> [!CAUTION]
+> Fehlt einer Component das Property **ROWID** (mit Mapping auf die DB-Column **FSRowID**), funktioniert der Mechanismus nicht. Die FSRowID wird benötigt, weil dadurch die Relation zur Übersetzungs-Tabelle hergestellt wird.
+
 ## Customizing-Package
 
 Die Eigenschaft **MLColumn** kann im Customizing-Package gesetzt werden. Somit kann man in Kunden-Umgebungen den Mechanismus gezielt für die gewünschten Tabellen-Spalten aktivieren.
@@ -32,3 +35,21 @@ Die ML-Column-Logik wird von den ganz normalen Component-Properties behandelt. D
 
 > [!IMPORTANT]
 > Die Sprache ist mit dem Start der Anwendung am GlobalObject festgelegt. Es gibt keine Möglichkeit, zur Laufzeit auf die Sprache Einfluss zu nehmen oder die Texte in einer spezifischen Sprache zu behandeln.
+
+## Tips für Entwickler
+
+### Finden von MLColumns
+
+Wird eine DBColumn als MLColumn gekennzeichnet wird dafür der folgende Code generiert:
+
+```csharp
+public class Package_FSColumnName : FS.Demo.MDT.ArticleName
+{
+    public Package_FSColumnName()
+    {
+        this.m_IsMLColumn = true;
+    }
+}
+```
+
+Dadurch können alle MLColumns mit dem Text `this.m_IsMLColumn = true;` über die Code-Suche gefunden werden. Dabei die Suche auf die DBTables einschränken.
