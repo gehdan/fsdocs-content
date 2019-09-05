@@ -9,7 +9,7 @@ Nachfolgend werden diejenigen Funktionen erläutert, die nur auf spezifischen Ge
 ### Unterstützte Formate
 
 |Name|Beispiel|
-|---|---|
+|---|:-:|
 |AZTEC|![Aztec](media/barcodes/aztec.png)|
 |CODABAR|![Codabar](media/barcodes/codabar.png)|
 |CODE_39|![Aztec](media/barcodes/code_39.png)|
@@ -38,7 +38,7 @@ ScanBarcode(Action<IFrameworkBarcodeScanInfo> callback, BarcodeFormat allowedFor
 
 ![Scan](media/scan.png)
 
-#### Parameter `Action<IFrameworkBarcodeScanInfo> callback`
+#### Parameter *Action<IFrameworkBarcodeScanInfo> callback*
 
 Wenn der Scanvorgang am Client abgeschlossen ist, wird der übergebene Callback aufgerufen. Der Callback ist vom Typ
 
@@ -61,7 +61,7 @@ Action<IFrameworkBarcodeScanInfo>
 
 ![Callback](media/callback.png)
 
-#### Parameter `BarcodeFormat allowedFormat`
+#### Parameter *BarcodeFormat allowedFormat*
 
 Definiert, welches Barcode-Format am Client bei einem Scanvorgang unterstützt wird.
 
@@ -74,7 +74,7 @@ Wenn am Client z.B. CODE_128 und ITF unterstützt werden soll, so können diese 
 
 ![Scan](media/scan.png)
 
-#### Parameter `string identifier`
+#### Parameter *string identifier*
 
 Es kann vorkommen, dass auf einem Form mehrere Buttons einen Scan initiieren können. Beispielsweise könnte erst ein Auftrag und nachfolgend eine Menge eingescannt werden. Es ist aber oft nicht praktikabel, für jeden Scanvorgang einen separaten Callback zu implementieren.
 
