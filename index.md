@@ -1,7 +1,12 @@
-# This is the **HOMEPAGE**
+# Framework Studio 4.2
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+> [!NOTE]
+> Diese Dokumentation befindet sich noch im Aufbau.
 
-## Quick Start Notes
+Diese Seite gliedert sich in folgende Teile:
 
-1. Add images to the *images* folder if the file is referencing an image.
+1. [Technische Dokumentation](doc/index.md)
+
+2. Api-Dokumentation
+
+Andere Versionen können [hier](/index.html) aufgerufen werden.
