@@ -10,3 +10,5 @@ items:
       href: funktionsumfang.md
     - name: Controls
       href: controls.md
+    - name: Gerätespezifische Funktionen
+      href: geraete-funktionen.md

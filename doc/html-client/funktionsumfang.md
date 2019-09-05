@@ -45,7 +45,7 @@ Es werden derzeit folgende Actions unterstützt:
 * SetEnabled
 * SetVisible
 * SetCloseButton
-* Schließen eines Forms durch den Broker mit "this.Close()"
+* ScanBarcode
 
 ## Zurück-Button auf mobilen Geräten
 
