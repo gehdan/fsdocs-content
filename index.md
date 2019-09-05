@@ -9,4 +9,4 @@ Diese Seite gliedert sich in folgende Teile:
 
 2. Api-Dokumentation
 
-Andere Versionen können [hier](/index.html) aufgerufen werden.
+Andere Versionen können [hier](/fsdocs/index.html) aufgerufen werden.
