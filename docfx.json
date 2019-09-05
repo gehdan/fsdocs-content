@@ -10,7 +10,7 @@
             "**/obj/**",
             "**/bin/**"
           ],
-          "src": "../FS/"
+          "src": "../fsdocs-fs/"
         }
       ],
       "dest": "obj/api",
