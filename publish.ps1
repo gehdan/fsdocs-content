@@ -56,6 +56,7 @@ if (PrepareFsRepo("publish") -ne 0){
 & docfx\docfx.exe docfx.json
 
 ## in das ziel-Verzeichnis kopieren.
+$GitRepoPath = $TargetRepo
 $TargetRepoSite = Join-Path $TargetRepo ("v" + $FSVersion)
 
 Write-Host "Rmove old site..."
@@ -70,7 +71,8 @@ Write-Host "copy new site..."
 Copy-Item (Join-Path $PSScriptRoot "_site") -Destination $TargetRepoSite -Recurse -Force
 
 ## commit changes and push
-GitCall commit "-a", "-m", ("Publish Version " + $FSVersion)
+GitCall add "."
+GitCall commit "-m", ("Publish Version " + $FSVersion)
 GitCall push
 
 Write-Host
