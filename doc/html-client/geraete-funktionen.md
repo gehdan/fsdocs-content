@@ -28,21 +28,41 @@ Nachfolgend werden diejenigen Funktionen erläutert, die nur auf spezifischen Ge
 
 In Framework Studio wird ein Scan über folgende Action am Form gestartet:
 
-```C#
-ScanBarcode(Action<IFrameworkBarcodeScanInfo> callback, BarcodeFormat allowedFormat)
+```csharp
+ScanBarcode(
+    Action<IFrameworkBarcodeScanInfo> callback,
+    BarcodeFormat allowedFormat
+)
+```
 
-ScanBarcode(Action<IFrameworkBarcodeScanInfo> callback, BarcodeFormat allowedFormat, string identifier)
+oder
+
+```csharp
+ScanBarcode(
+    Action<IFrameworkBarcodeScanInfo> callback,
+    BarcodeFormat allowedFormat,
+    string identifier
+)
 ```
 
 **Beispiel:**
 
-![Scan](media/scan.png)
+```csharp
+protected virtual void FE_btnScan_OnClick(FrameworkButtonClickEventArgs e)
+{
+	this.ScanBarcode(
+        this.ScanBarcodeCallback,
+        BarcodeFormat.CODE_128 | BarcodeFormat.ITF,
+        "Article"
+    );
+}
+```
 
 #### Parameter *Action<IFrameworkBarcodeScanInfo> callback*
 
 Wenn der Scanvorgang am Client abgeschlossen ist, wird der übergebene Callback aufgerufen. Der Callback ist vom Typ
 
-```C#
+```csharp
 Action<IFrameworkBarcodeScanInfo>
 ```
 
@@ -59,7 +79,28 @@ Action<IFrameworkBarcodeScanInfo>
 
 **Beispiel:**
 
-![Callback](media/callback.png)
+```csharp
+public virtual void ScanBarcodeCallback(IFrameworkBarcodeScanInfo e)
+{
+	this.Reset();
+	
+	this.sIdentifier = e.Identifier;
+	
+	if (e.HasError)
+	{
+		this.sValue = e.ErrorMessage;	
+	}
+	else if (e.Cancelled)
+	{
+		this.sValue = "Cancelled";
+	}
+	else 
+	{
+        this.sValue = e.Value;
+		this.sFormat = e.Format.ToString();
+	}
+}
+```
 
 #### Parameter *BarcodeFormat allowedFormat*
 
@@ -72,7 +113,16 @@ Definiert, welches Barcode-Format am Client bei einem Scanvorgang unterstützt w
 
 Wenn am Client z.B. CODE_128 und ITF unterstützt werden soll, so können diese per bitweiser Oder-Verknüpfung übergeben werden.
 
-![Scan](media/scan.png)
+```csharp
+protected virtual void FE_btnScan_OnClick(FrameworkButtonClickEventArgs e)
+{
+	this.ScanBarcode(
+        this.ScanBarcodeCallback,
+        BarcodeFormat.CODE_128 | BarcodeFormat.ITF,
+        "Article"
+    );
+}
+```
 
 #### Parameter *string identifier*
 
@@ -82,7 +132,36 @@ Anstatt dessen kann der `ScanBarcode()`-Action einfach ein beliebiger `string` m
 
 **Beispiel:**
 
-![Identifier](media/identifier.png)
+```csharp
+public virtual void ScanBarcodeCallback(IFrameworkBarcodeScanInfo e)
+{
+	this.Reset();
+	
+	this.sIdentifier = e.Identifier;
+	
+	if (e.HasError)
+	{
+		this.sValue = e.ErrorMessage;	
+	}
+	else if (e.Cancelled)
+	{
+		this.sValue = "Cancelled";
+	}
+	else 
+	{
+        if (e.Identifier == "Article")
+        {
+            this.sArticle = e.Value;
+        }
+        else
+        {
+            this.sAmount = e.Value;
+        }
+		
+		this.sFormat = e.Format.ToString();
+	}
+}
+```
 
 ### Berechtigung für Kamera
 
