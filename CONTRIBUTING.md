@@ -43,7 +43,7 @@ Die Api-Dokumentation wird automatisch aus dem Framework Studio Source Code gene
   |    |- v4.0
   |    |- v4.2
   |- fsdocs-content
-  |    |- publish.cmd
+  |    |- publish.ps1
   |    |- [...]
   |- fsdocs-fs   (nur intern)
   |    |- [Framework Studio Entwicklung]
