@@ -1,5 +1,14 @@
--exclude:
-  hasAttribute:
-    uid: System.ComponentModel.EditorBrowsableAttribute
-    ctorArguments:
-    - System.ComponentModel.EditorBrowsableState.Never
+apiRules:
+- include:
+    hasAttribute:
+      uid: FrameworkSystems.FrameworkExceptions.DocfxBrowsableAttribute
+    type: Type
+- include:
+    hasAttribute:
+      uid: FrameworkSystems.FrameworkExceptions.DocfxBrowsableAttribute
+    type: Member
+
+- exclude:
+    type: Type
+- exclude:
+    type: Member
