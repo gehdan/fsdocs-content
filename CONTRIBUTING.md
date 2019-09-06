@@ -51,7 +51,7 @@ Die Api-Dokumentation wird automatisch aus dem Framework Studio Source Code gene
 
 Die Datei [publish.ps1](publish.ps1) im Root-Verzeichnis führt den kompletten Publish-Vorgang durch inkl. upload in des Repository fsdocs.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Der Publish erfolgt ausschließlich durch Mitarbeiter der **Framework Systems GmbH**.
 
 ## Guidelines
