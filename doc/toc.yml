@@ -2,8 +2,10 @@ items:
 - name: Allgemein
   href: index.md
   items:
-   - name: Options
-     href: allgemein/options.md
+    - name: Systemvoraussetzungen
+      href: allgemein/requirements.md
+    - name: Options
+      href: allgemein/options.md
 
 - name: Metadatentypen
   href: mdt/ 
