@@ -26,8 +26,8 @@ Die Standardeinstellung auf Windows-Desktop Betriebssystemen erlaubt das Ausfüh
 Daher ist unter Umständen einmalig das folgende Vorgehen nötig:
 
 1. Windows Powershell als Administrator starten
-2. Folgenden Code ausführen: "set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine"
-3. Rückfrage mit J beantworten
+2. Folgenden Code ausführen: `set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine`
+3. Rückfrage mit `J` beantworten
 
 ## Publish
 
