@@ -28,6 +28,12 @@
       },
       {
         "files": [
+          "articles/**.md",
+          "articles/**.yml"
+        ]
+      },
+      {
+        "files": [
           "doc/**.md",
           "doc/**.yml"
         ]
