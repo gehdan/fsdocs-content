@@ -71,8 +71,9 @@ Write-Host "copy new site..."
 Copy-Item (Join-Path $PSScriptRoot "_site") -Destination $TargetRepoSite -Recurse -Force
 
 ## commit changes and push
-GitCall commit "-a", "-q", "-m", ("Publish Version " + $FSVersion)
-GitCall push
+$_ = GitCall add "."
+$_ = GitCall commit "-q", "-m", ("Publish Version " + $FSVersion)
+$_ = GitCall push
 
 Write-Host
 Write-Host
