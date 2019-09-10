@@ -48,5 +48,6 @@
         "woerterbuch",
         "yymmdd",
         "yyyymmdd"
-    ]
+    ],
+    "markdown.extension.toc.updateOnSave": false
 }

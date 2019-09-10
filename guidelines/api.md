@@ -37,7 +37,7 @@ Die Block **\<summary>** umfasst eine kurze aber aussagekräftige Beschreibung d
 
 Weiterführende Informationen und Beispiele werden in den anderen Blöcken **\<remarks>** und **\<examples>** abgelegt. Diese werden in der Details-Seite angezeigt.
 
-### Code-Beispiele:
+### Code-Beispiele
 
 Inline:
 
