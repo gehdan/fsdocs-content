@@ -20,7 +20,14 @@ Es ist auch möglich für eine Version z.B. feature-Branches zu erzeugen. Diese 
 
 ## Build / Preview
 
-Die Datei [build-serve.cmd](build-serve.cmd) buildet das Projekt und startet einen lokalen Web-Server über den die doku angezeigt werden kann. Diese Datei kann über das Terminal gestartet werden. Die Lokale Webseite kann über <http://localhost:1234> angezeigt werden.
+Die Datei [build-serve.ps1](build-serve.ps1) buildet das Projekt und startet einen lokalen Web-Server über den die Doku angezeigt werden kann. Diese Datei kann über das Terminal gestartet werden. Die Lokale Webseite kann über <http://localhost:1234> angezeigt werden.
+
+Die Standardeinstellung auf Windows-Desktop Betriebssystemen erlaubt das Ausführen von Skripten nicht.
+Daher ist unter Umständen einmalig das folgende Vorgehen nötig:
+
+1. Windows Powershell als Administrator starten
+2. Folgenden Code ausführen: `set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine`
+3. Rückfrage mit `J` beantworten
 
 ## Publish
 
@@ -36,15 +43,15 @@ Die Api-Dokumentation wird automatisch aus dem Framework Studio Source Code gene
   |    |- v4.0
   |    |- v4.2
   |- fsdocs-content
-  |    |- publish.cmd
+  |    |- publish.ps1
   |    |- [...]
   |- fsdocs-fs   (nur intern)
   |    |- [Framework Studio Entwicklung]
 ```
 
-Die Datei [publish.cmd](publish.cmd) im Root-Verzeichnis führt den kompletten Publish-Vorgang durch inkl. upload in des Repository fsdocs.
+Die Datei [publish.ps1](publish.ps1) im Root-Verzeichnis führt den kompletten Publish-Vorgang durch inkl. upload in des Repository fsdocs.
 
-> [!IMPORTANT]
+> [!WARNING]
 > Der Publish erfolgt ausschließlich durch Mitarbeiter der **Framework Systems GmbH**.
 
 ## Guidelines

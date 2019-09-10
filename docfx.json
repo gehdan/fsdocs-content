@@ -4,7 +4,9 @@
       "src": [
         {
           "files": [
-            "**/FrameworkExceptions.csproj"
+            "**/FrameworkExceptions.csproj",
+            "**/FrameworkBase.csproj",
+            "**/FrameworkStudio.DevFormBase.csproj"
           ],
           "exclude": [
             "**/obj/**",
@@ -24,6 +26,12 @@
           "api/**.yml"
         ],
         "src": "obj"
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**.yml"
+        ]
       },
       {
         "files": [

@@ -1,5 +1,9 @@
 items:
+- name: Framework Studio 4.0
+  href: index.md
+- name: Artikel
+  href: articles/
 - name: Technische Doku
   href: doc/
-- name: Api Documentation
+- name: Api Dokumentation
   href: obj/api/

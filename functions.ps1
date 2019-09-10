@@ -97,7 +97,11 @@ function PrepareFsRepo {
     $FSDevBranch = $FSVersion + "/dev";
 
     $FSCurrentDevBranch = GitCall rev-parse --abbrev-ref, HEAD;
-    $FSCurrentDevBranchVersion = $FSCurrentDevBranch.SubString(0, $FSCurrentDevBranch.IndexOf('/'));
+    if ($FSCurrentDevBranch.IndexOf('/') -eq -1){
+        $FSCurrentDevBranchVersion = "0.0"
+    } else {
+        $FSCurrentDevBranchVersion = $FSCurrentDevBranch.SubString(0, $FSCurrentDevBranch.IndexOf('/'));
+    }
     $GitChanges = GitCall status --porcelain;
 
     if ($GitChanges -ne ""){
