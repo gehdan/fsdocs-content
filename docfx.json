@@ -5,7 +5,8 @@
         {
           "files": [
             "**/FrameworkExceptions.csproj",
-            "**/FrameworkBase.csproj"
+            "**/FrameworkBase.csproj",
+            "**/FrameworkStudio.DevFormBase.csproj"
           ],
           "exclude": [
             "**/obj/**",
