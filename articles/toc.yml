@@ -1,3 +1,6 @@
 items:
   - name: Neuheiten
     href: index.md
+    items:
+      - name: Version 4.2
+        href: neuheiten-4-2.md
