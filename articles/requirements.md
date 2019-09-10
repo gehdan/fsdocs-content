@@ -31,7 +31,7 @@ Es werden ausschließlich **64-Bit** Systeme unterstützt.
 * Visual Studio: empfohlen zum Debuggen von Anwendungen
   * Visual Studio 2012
   * Visual Studio 2010
-  * Andere Versionen und Editionen können auf eigene Verantwortung in den [IDE-Options](options.md) konfiguriert werden.
+  * Andere Versionen und Editionen können auf eigene Verantwortung in den [IDE-Options](~/doc/allgemein/options.md) konfiguriert werden.
 
 ## Anwendungs-Server
 

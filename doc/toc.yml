@@ -2,8 +2,6 @@ items:
 - name: Allgemein
   href: index.md
   items:
-    - name: Systemvoraussetzungen
-      href: allgemein/requirements.md
     - name: Options
       href: allgemein/options.md
 
