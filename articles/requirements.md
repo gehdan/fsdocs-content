@@ -41,7 +41,7 @@ ab Windows 10 ist das .NET Framework 4.6 standardmäßig installiert.
 * Visual Studio: empfohlen zum Debuggen von Anwendungen
   * Visual Studio 2012
   * Visual Studio 2010
-  * Andere Versionen und Editionen können auf eigene Verantwortung in den [IDE-Options](options.md) konfiguriert werden.
+  * Andere Versionen und Editionen können auf eigene Verantwortung in den [IDE-Options](~/doc/allgemein/options.md) konfiguriert werden.
 * Windows Azure: Für die Funktion Publish2Azure wird folgende Software benötigt:
   * Windows Azure SDK Version 2.4
 

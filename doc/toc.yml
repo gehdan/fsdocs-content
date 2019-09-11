@@ -2,8 +2,6 @@ items:
 - name: Allgemein
   href: index.md
   items:
-    - name: Systemvoraussetzungen
-      href: allgemein/requirements.md
     - name: Options
       href: allgemein/options.md
 
@@ -11,6 +9,12 @@ items:
   items:
     - name: FS-Datentypen
       href: konzepte/fs-types.md
+
+- name: Code-Editor
+  href: code-editor/index.md
+  items:
+    - name: Code-Messages
+      href: code-editor/code-messages.md
 
 - name: Metadatentypen
   href: mdt/ 

@@ -1,3 +1,6 @@
 items:
   - name: Neuheiten
     href: index.md
+
+  - name: Systemvoraussetzungen
+    href: requirements.md

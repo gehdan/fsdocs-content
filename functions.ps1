@@ -152,7 +152,7 @@ function PrepareFsRepo {
 
     ## beim Publish muss das FS-Repo noch bereinigt werden damit keine ungewollten Inhalte vorhanden sind.
     if ($isPublish){
-        $_ = GitCall clean "-fdx"
+        $_ = GitCall clean "-fdxq"
     }
 
     ## eine dummy GlobalAssembly anlegen, damit es beim Build keine Warning gibt.

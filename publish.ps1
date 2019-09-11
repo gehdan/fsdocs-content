@@ -43,7 +43,7 @@ GitCall pull
 # Content-Repository bereinigen und auf den neusten Stand bringen.
 $GitRepoPath = $PSScriptRoot;
 GitCall push
-GitCall clean "-fdx"
+GitCall clean "-fdxq"
 GitCall pull
 
 # FS-Repository für die Api-Doku prüfen
@@ -71,9 +71,9 @@ Write-Host "copy new site..."
 Copy-Item (Join-Path $PSScriptRoot "_site") -Destination $TargetRepoSite -Recurse -Force
 
 ## commit changes and push
-GitCall add "."
-GitCall commit "-m", ("Publish Version " + $FSVersion)
-GitCall push
+$_ = GitCall add "."
+$_ = GitCall commit "-q", "-m", ("Publish Version " + $FSVersion)
+$_ = GitCall push
 
 Write-Host
 Write-Host
