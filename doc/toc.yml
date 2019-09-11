@@ -5,6 +5,11 @@ items:
     - name: Options
       href: allgemein/options.md
 
+- name: Konzepte
+  items:
+    - name: FS-Datentypen
+      href: konzepte/fs-types.md
+      
 - name: MLKey
   href: mlkey/woerterbuch.md
   items:
@@ -24,6 +29,7 @@ items:
       href: mlkey/mlkey-cleanup.md
     - name: TODO
       href: mlkey/draft.md
+
 
 - name: Code-Editor
   href: code-editor/index.md
