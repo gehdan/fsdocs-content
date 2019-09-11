@@ -5,6 +5,7 @@
         {
           "files": [
             "**/FrameworkExceptions.csproj",
+            "**/FrameworkDataProvider.csproj",
             "**/FrameworkBase.csproj",
             "**/FrameworkStudio.DevFormBase.csproj"
           ],
