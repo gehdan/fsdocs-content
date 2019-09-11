@@ -1,29 +1,43 @@
 # Aggregat-Funktionen
 
-## `COUNT ( <Expression> )`
+#### COUNT
+
+`COUNT ( <Expression> )`
 
 Liefert die Anzahl.
 
-## `MIN ( <Expression> )`
+#### MIN
+
+`MIN ( <Expression> )`
 
 Liefert das Minimum.
 
-## `MAX ( <Expression> )`
+#### MAX
+
+`MAX ( <Expression> )`
 
 Liefert das Maximum.
 
-## `SUM ( <Number Expression> )`
+#### SUM
+
+`SUM ( <Number Expression> )`
 
 Liefert den Summe.
 
-## `AVG ( <Number Expression> )`
+#### AVG
+
+`AVG ( <Number Expression> )`
 
 Liefert den Durchschnitt.
 
-## `VAR ( <Number Expression> )`
+#### VAR
+
+`VAR ( <Number Expression> )`
 
 Liefert die Varianz.
 
-## `STDEV ( <Number Expression> )`
+#### STDEV
+
+`STDEV ( <Number Expression> )`
 
 Liefert die Standardabweichung.

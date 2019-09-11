@@ -31,7 +31,7 @@ Es werden ausschließlich **64-Bit** Systeme unterstützt.
 * Visual Studio: empfohlen zum Debuggen von Anwendungen
   * Visual Studio 2012
   * Visual Studio 2010
-  * Andere Versionen und Editionen können auf eigene Verantwortung in den [IDE-Options](~/doc/allgemein/options.md) konfiguriert werden.
+  * Andere Versionen und Editionen können auf eigene Verantwortung in den [IDE-Options](../doc/allgemein/options.md#visual-studio-path) konfiguriert werden.
 
 ## Anwendungs-Server
 
@@ -145,10 +145,8 @@ Der Crystal Reports Designer wird für die Bearbeitung der Crystal Reports auf d
 
 ## Datenbank-Server
 
-* Microsoft SQL Server 2014 (Standard / Enterprise / BI)
+* Microsoft SQL Server 2014 - oder höher (Standard / Enterprise / BI)
 * Microsoft SQL Server 2012 SP1 (Standard / Enterprise / BI)
-* Microsoft SQL Server 2008 R2 SP2 (Standard / Enterprise / Datacenter)
-* Microsoft SQL Server 2008 SP3 (Standard / Enterprise / Datacenter)
 
 Die Express- und Developer-Editionen des SQL Server können zu Entwicklungs- und Test-Zwecken eingesetzt werden. Dabei sind aber entsprechende funktionale und lizenzrechtliche Einschränkungen seitens Microsoft zu beachten. Der Einsatz erfolgt auf eigene Verantwortung.
 

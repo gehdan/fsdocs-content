@@ -1,10 +1,12 @@
 # SQL-Funktionen
 
-## `GETGUID ( )`
+#### GETGUID
+
+`GETGUID ( )`
 
 Liefert eine neue Guid mit folgendem Format: `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
-| |Umsetzung des Statements auf den verschiedenen Datenbanken|
-|-|-|
-|SQL-Server | `LOWER( REPLACE ( NEWID ( ), '-', '' ) )` |
-|Oracle     | `LOWER( SYS_GUID ( ) )` |
+|            | Umsetzung des Statements auf den verschiedenen Datenbanken |
+| ---------- | ---------------------------------------------------------- |
+| SQL-Server | `LOWER( REPLACE ( NEWID ( ), '-', '' ) )`                  |
+| Oracle     | `LOWER( SYS_GUID ( ) )`                                    |

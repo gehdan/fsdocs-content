@@ -31,6 +31,10 @@ Mit dem Umstieg auf das .NET Framework 4.8 können einige ältere Windows Betrie
 
 Für die Endanwender-Rechner bzw. Terminal-Server gelten weiter die bisherigen Anforderungen.
 
+#### SQL-Server
+
+Es wird der SQL-Server **2012** oder höher unterstützt. Ältere Version (z.B. SQL-Server 2008) werden nicht mehr supported
+
 #### Oracle Server
 
 Es wird der Oracle Server **12.2** oder höher (18c, 19c, ...) unterstützt. Ältere Versionen werden nicht mehr supported.
@@ -40,3 +44,59 @@ Es wird der Oracle Server **12.2** oder höher (18c, 19c, ...) unterstützt. Äl
 Es wird nur noch der **Oracle Managed** Provider unterstützt.
 
 Der Oracle ODP Provider ist veraltet (deprecated) und wird nicht mehr supported.
+
+## C# 7
+
+Mit dem Update auf das .net Framework 4.8 unterstützt Framework Studio auch die C# Sprach-Features bis zur Version 7.3. Eine Übersicht der Features bietet die folgende Web-Seite:
+
+* <https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7>
+
+In der folgenden Liste werden einige Features genannt, die seit C# 6 hinzugekommen sind.
+Der Einsatz des folgenden Features ist in Framework-Studio empfehlenswert:
+
+* [out variables](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#out-variables>) - inline-Deklaration (C# 7.0)
+
+Die folgenden Features können ggf. sinnvoll sein:
+
+* [Tuples](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#tuples>) (C# 7.0)
+* [Inferred tuple element names](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7-1#inferred-tuple-element-names>) (C# 7.1)
+* [Tuples support == and !=](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7-3#tuples-support--and->) (C# 7.3)
+* [Pattern matching](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#pattern-matching>) (C# 7.0)
+* [Local functions](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#local-functions>) - aber nur sehr gut überlegt!! (C# 7.0)
+
+## Code-Messages überarbeitet
+
+Die vom Exception- und MessageBox-Wizard generierten [Code-Messages](../doc/code-editor/code-messages.md) wurden überarbeitet.
+
+![Code-Messages](../doc/code-editor/media/code-messages-example.png)
+
+Das bisherige Konstrukt mit `#region` wurde durch eine Variante mit einem einfachen eingefärbten Kommentar `// FSCodeMessage:` ersetzt. Das macht den Quellcode kompakter und leserlicher – ohne extra aufklappen zu müssen.
+
+Der XML-Teil, welcher bisher die Informationen für die Wizard-Dialoge beinhaltet hat, entfällt. In der Vergangenheit konnte es sein, dass die XML-Informationen vom Code abwichen. Der Wizard hat dann den Code ignoriert und einfach ersetzt. Dadurch konnten wichtige Infos – wie z.B. ein MessageBox EventHandler – verloren gehen. Die Informationen werden jetzt aus dem Code geparsed. Kann (z.B. aufgrund von manuellen Anpassungen) der Code nicht geparsed werden, kann er nicht mehr durch den Wizard bearbeitet werden.
+
+Die Code-Messages können einen [MLKey aus dem Wörterbuch](../doc/mlkey/woerterbuch.md) verwenden. Die bisherige Variante mit TextCollection-Einträgen soll nach und nach durch die MLKeys ersetzt werden und so die ctMessage-TextCollections auslaufen.
+
+Bei MsgBox.Show() sind die Enum-Werte für Button und Icon leserlich ausgeschrieben. Bisher wurden dort nur die int-Werte verwendet.
+
+Die Konvertierung des bestehenden Codes in das neue Format erfolgt auf folgende Weise:
+
+1. Durch die [MLKey-Konvertierungs-Routine](../doc/mlkey/migration.md#3-convert-messages) – diese setzt alle Code-Messages automatisch auf einen MLKey und/oder das neue Format um.
+2. Durch manuellen Aufruf des Exception- oder MsgBox-Wizards. Beim Speichern wird der Code durch die neue Variante ersetzt.
+
+Bei beiden Konvertierungen wird nur der Code betrachtet - der alte XML-Teil wird ignoriert.
+Neue Messages werden immer im neuen Format generiert. Dabei ist es egal, ob ein Textcollection-Eintrag oder ein MLKey verwendet wird.
+
+## Actions SetEnabled und SetVisible nullable
+
+Die Control-Actions `SetEnabled` und `SetVisible` haben neue Überladungen bekommen, welche das Zurücksetzen auf den im Property-Grid des Form-Designers eingestellten Wert ermöglichen.
+
+Dazu wurden folgende Überladungen ergänzt, bei denen der `null`-Wert zum Zurücksetzten verwendet werden kann:
+
+* `SetEnabled(bool? value)`
+* `SetEnabled(FSbool value)`
+* `SetVisible(FSVisibility? value)`
+
+> [!CAUTION]
+> Achtung, falls Reflection verwendet wurde!
+>
+> Sollte eine der ursprünglichen Methoden aus irgend einem Grund per Reflection angesprochen worden sein, so kann es nun zu dem Problem kommen, dass nicht mehr eine eindeutige, sondern mehrere Überladungen der Methode gefunden werden. Die Überladungen `SetEnabled(bool value)` und `SetVisible(FSVisibility value)` wurden entfernt, da Aufrufe vom Compiler direkt auf die entsprechenden Nullable-Überladungen umgelenkt werden.

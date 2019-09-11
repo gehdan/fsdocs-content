@@ -1,29 +1,43 @@
 # Alphanumerische Funktionen
 
-## `LENGTH ( <text> )`
+#### LENGTH
+
+`LENGTH ( <text> )`
 
 Liefert die Länge des Ausdrucks
 
-## `LOWER ( <text> )`
+#### LOWER
+
+`LOWER ( <text> )`
 
 Text in Kleinbuchstaben.
 
-## `UPPER ( <text> )`
+#### UPPER
+
+`UPPER ( <text> )`
 
 Text in Großbuchstaben.
 
-## `LTRIM ( <text> )`
+#### LTRIM
+
+`LTRIM ( <text> )`
 
 Schneidet die linken Leerzeichen der Zeichenkette ab.
 
-## `RTRIM ( <text> )`
+#### RTRIM
+
+`RTRIM ( <text> )`
 
 Schneidet die rechten Leerzeichen der Zeichenkette ab.
 
-## `REPLACE ( <text>, <search text>, <replace text> )`
+#### REPLACE
+
+`REPLACE ( <text>, <search text>, <replace text> )`
 
 Ersetzt im übergebenen Text den Search-Text durch Replace-Text.
 
-## `SUBSTRING ( <text>, <number start>, <number length> )`
+#### SUBSTRING
+
+`SUBSTRING ( <text>, <number start>, <number length> )`
 
 Gibt den Teil einer Zeichenkette zurück.

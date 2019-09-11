@@ -4,132 +4,132 @@ Im Folgenden ist die Grammatik beschrieben, die vom Framework Studio SQL-Parser 
 
 ## Grammatik für SQL-Kommandos
 
-* `<select>`
+#### `<select>`
 
-    ```sql
-    SELECT [DISTINCT] { * | <resultColumn>[,…n] }
-    FROM { <singleSource> | <joinSource> }
-    [ WHERE <condition> ]
-    [ GROUP BY <value>[,…n] [HAVING <condition>]]
-    [ {UNION [ALL] | INTERSECT | EXCEPT} <select(ohne orderby)> ]
-    [ ORDER BY <orderColumn>[,…n] ]
-   ```
+```sql
+SELECT [DISTINCT] { * | <resultColumn>[,…n] }
+FROM { <singleSource> | <joinSource> }
+[ WHERE <condition> ]
+[ GROUP BY <value>[,…n] [HAVING <condition>]]
+[ {UNION [ALL] | INTERSECT | EXCEPT} <select(ohne orderby)> ]
+[ ORDER BY <orderColumn>[,…n] ]
+```
 
-* `<insert>`
+#### `<insert>`
 
-    ```sql
-    INSERT INTO <identifierChain> ( <identifier>[,…n] )
-    {
-        VALUES ( <value>[,…n] )
-    | <select>
-    }
-    ```
+```sql
+INSERT INTO <identifierChain> ( <identifier>[,…n] )
+{
+    VALUES ( <value>[,…n] )
+| <select>
+}
+```
 
-* `<update>`
+#### `<update>`
 
-    ```sql
-    UPDATE <identifierChain>
-    SET {<identifierChain> = <value> } [,…n]
-    [ WHERE <condition> ]
-    ```
+```sql
+UPDATE <identifierChain>
+SET {<identifierChain> = <value> } [,…n]
+[ WHERE <condition> ]
+```
 
-* `<delete>`
+#### `<delete>`
 
-    ```sql
-    DELETE [FROM] <identifierChain>
-    [ WHERE <condition> ]
-    ```
+```sql
+DELETE [FROM] <identifierChain>
+[ WHERE <condition> ]
+```
 
 ## Grammatik für die Bestandteile der Kommandos
 
-* `<resultColumn>`
+#### `<resultColumn>`
 
-    ```sql
-    <identifierChain>.*
-        | <value> [AS <identifier>]
-    ```
+```sql
+<identifierChain>.*
+    | <value> [AS <identifier>]
+```
 
-* `<singleSource>`
+#### `<singleSource>`
 
-    ```sql
-    ( <singleSource> )
-    | <identifierChain> [ [AS] <identifier> ]
-    ```
+```sql
+( <singleSource> )
+| <identifierChain> [ [AS] <identifier> ]
+```
 
-* `<joinSource>`
+#### `<joinSource>`
 
-    ```sql
-    ( <joinSource> )
+```sql
+( <joinSource> )
 
-    | { <singleSource> | <joinSource> }
-    { INNER | {LEFT | RIGHT | FULL} [OUTER] } JOIN
-    { <singleSource> | <joinSource> } ON <condition>
-    ```
+| { <singleSource> | <joinSource> }
+{ INNER | {LEFT | RIGHT | FULL} [OUTER] } JOIN
+{ <singleSource> | <joinSource> } ON <condition>
+```
 
-* `<condition>`
+#### `<condition>`
 
-    ```sql
-    ( <condition> )
-    | NOT <condition>
-    | <condition> {{ AND | OR } <condition>}[,…n]
-    | <value> <predicate2>
-    | EXISTS ( <select> )
-    ```
+```sql
+( <condition> )
+| NOT <condition>
+| <condition> {{ AND | OR } <condition>}[,…n]
+| <value> <predicate2>
+| EXISTS ( <select> )
+```
 
-* `<predicate2>`
+#### `<predicate2>`
 
-    ```sql
-    { = | != | < | <= | > | >= } <value>
-    | IS [NOT] NULL
-    | BETWEEN <value> AND <value>
-    | IN ( <select> | <value> [,…n] )
-    | LIKE <value>
-    | LIKEESCAPE <value>
-    ```
+```sql
+{ = | != | < | <= | > | >= } <value>
+| IS [NOT] NULL
+| BETWEEN <value> AND <value>
+| IN ( <select> | <value> [,…n] )
+| LIKE <value>
+| LIKEESCAPE <value>
+```
 
-* `<value>`
+#### `<value>`
 
-    ```sql
-    NULL
-    | ( <value> )
-    | { - | + } <value>
-    | <value> { + | - | * | / | “||” } <value>
-    | <identifierChain>
-    | [<identifierChain>.] <FunktionsName> ( [ <value> [,…n] ] )
-    | <searchedCaseWhen>
-    | <simpleCaseWhen>
-    | "[[" <natives sql fragment> "]]"
-    | <stringLiteral>
-    | <integerValue>
-    | <decimalValue>
-    ```
+```sql
+NULL
+| ( <value> )
+| { - | + } <value>
+| <value> { + | - | * | / | “||” } <value>
+| <identifierChain>
+| [<identifierChain>.] <FunktionsName> ( [ <value> [,…n] ] )
+| <searchedCaseWhen>
+| <simpleCaseWhen>
+| "[[" <natives sql fragment> "]]"
+| <stringLiteral>
+| <integerValue>
+| <decimalValue>
+```
 
-* `<searchedCaseWhen>`
+#### `<searchedCaseWhen>`
 
-    ```sql
-    CASE {WHEN <condition> THEN <value>}[,…n]
-    [ ELSE <value> ] END
-    <simpleCaseWhen>
-    CASE <value>
-    {WHEN {<predicate2> | <value>} THEN <value>}[,…n]
-    [ ELSE <value> ] END
-    ```
+```sql
+CASE {WHEN <condition> THEN <value>}[,…n]
+[ ELSE <value> ] END
+<simpleCaseWhen>
+CASE <value>
+{WHEN {<predicate2> | <value>} THEN <value>}[,…n]
+[ ELSE <value> ] END
+```
 
-* `<orderColumn>`
+#### `<orderColumn>`
 
-    ```sql
-    <value> [ASC | DESC]
-    ```
+```sql
+<value> [ASC | DESC]
+```
 
-* `<identifierChain>`
+#### `<identifierChain>`
 
-    ```sql
-    <identifier>[.<identifier>][,…n]
-    ```
+```sql
+<identifier>[.<identifier>][,…n]
+```
 
-* `<identifier>`
+#### `<identifier>`
 
-    ```sql
-    "[" <beliebige Zeichenfolge> "]"
-    | <Wort, mit einem Buchstaben beginnend>
-    ```
+```sql
+"[" <beliebige Zeichenfolge> "]"
+| <Wort, mit einem Buchstaben beginnend>
+```

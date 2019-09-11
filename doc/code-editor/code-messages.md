@@ -1,4 +1,4 @@
-# Message Box Editor / Exception Editor
+# Code-Messages
 
 Wenn Sie eine Methode eines Forms bearbeiten, stehen Ihnen Editoren zum komfortablen Erstellen und Bearbeiten von mehrsprachigen Ausnahmen (Exceptions) und Meldungen (Message-Boxen) zur Verfügung. Diese können Sie über die Buttons ![btn Exception](media/button-exception-editor.png)  **Exception Editor Wizard** und  ![btn MessageBox](media/button-messagebox-editor.png) **Message Box Editor Wizard** aufrufen.
 
@@ -9,36 +9,44 @@ Beide Editoren weisen nur sehr geringfügige Unterschiede auf.
 ![MessageBox Editor](media/messagebox-editor.png)
 ![Exception Editor](media/exception-editor.png)
 
-Radiobutton **New Message**:
+#### Radiobutton **ML Key**
+
+Hier können sie einen [MLKey](../mlkey/woerterbuch.md) angeben. Mit dem Auswahl-Button neben dem Textfeld öffnet sich der Dialog [Select ML Key](../mlkey/woerterbuch.md).
+
+Dies ist die Standard-Option. Neue Meldungen sollten immer über das Wörterbuch gezogen werden.
+
+#### Radiobutton **New Message**
 
 Wenn Sie diesen Radiobutton auswählen, wird ein neuer Text in die ausgewählte Textcollection eingetragen.
 
 > [!IMPORTANT]
 > Wenn Sie einen neuen Text hinzufügen, müssen Sie auch die Textcollection kompilieren, da es sonst beim Ausführen des Programms Fehlermeldungen gibt.
 
-Radiobutton **Change Message**:
+#### Radiobutton **Change Message**
 
 Wenn Sie diesen Radiobutton auswählen, können Sie mit dem Button **Choose existing Message** einen bestehenden Eintrag aus der angegebenen Textcollection auswählen oder mit dem Button **Search** nach einem bestehenden Eintrag suchen.
 
-Button **Change Collection**:
+#### Button **Change Collection**
 
 Mit diesem Button kann die Textcollection geändert werden, aus der ein Text ausgewählt werden soll, bzw. in welcher der neue Text eingetragen werden soll. Als Default-Wert ist die Textcollection ctMessages ausgewählt.
 
-Button **Choose existing Message**:
+#### Button **Choose existing Message**
 
 Mit diesem Button kann aus der gewählten Textcollection ein existierender Eintrag ausgewählt werden.
 
-Feld **Collection**:
+#### Feld **Collection**
 
 Zeigt an, welche Textcollection ausgewählt ist.
 
-Button **Search**:
+#### Button **Search**
 
 Mit diesem Button öffnen Sie einen Suchdialog. In diesem Dialog wird die Suche auf die Textcollection, die im Exception Editor / Message Box Editor angegeben ist, eingeschränkt.
 
 Die Suchfunktionalität ist identisch mit den Möglichkeiten, die auf der Registerkarte **Search** im Framework-Designer zur Verfügung gestellt werden.
 
-**Text-Grid**:
+#### Text-Grid
+
+Ist ein MLKey ausgewählt, wird hier nur der Text angezeigt. Der ML Key kann über das Textfeld bzw. den Auswahl-Button geändert werden. Die Bearbeitung der Texte-Inhalte erfolgt über das [Wörterbuch](../mlkey/woerterbuch.md).
 
 In diesem Grid kann der Text der Message in den verschiedenen Sprachen eingegeben werden. Wurde mit **Choose existing Message** ein Eintrag ausgewählt, wird dieser geändert und in die Textcollection zurückgeschrieben. Alle vorhandenen Message-Boxen, die diesen Eintrag verwenden, sind ebenfalls davon betroffen. Dem Text können Parameter zugewiesen werden. Die Parameter werden in der Form `{0}, {1}` usw. angegeben. Jeder Parameter kann mehrmals verwendet werden.
 
@@ -48,7 +56,9 @@ Der Beleg {0} für Kunde {1} hat sich geändert. Wollen Sie den Beleg {0} speich
 
 Die Parameter werden in der Textbox **String.Format...** gefüllt.
 
-Combobox **Icon** (nur Message-Box):
+#### Combobox **Icon**
+
+(nur Message-Box)
 
 Gibt an, welches Icon verwendet werden soll
 
@@ -58,7 +68,9 @@ Gibt an, welches Icon verwendet werden soll
 * Question
 * None
 
-Combobox **Buttons** (nur Message-Box):
+#### Combobox **Buttons**
+
+(nur Message-Box)
 
 Gibt an, welche Buttons angezeigt werden sollen. Wird `OK` ausgewählt, ist es nicht notwendig, einen Event-Handler zu hinterlegen. Werden andere Buttons ausgewählt, muss ein Event-Handler hinterlegt werden.
 
@@ -69,7 +81,21 @@ Gibt an, welche Buttons angezeigt werden sollen. Wird `OK` ausgewählt, ist es n
 * YesNo
 * YesNoCancel
 
-Button **Event Handler** (nur Message Box Editor):
+#### Combobox **Default**
+
+(nur Message-Box)
+
+Gibt den Button an, der beim Anzeigen der Message-Box ausgewählt sein soll. So kann z.B. bei den Buttons `YesNo` durch Angabe von `Button2` das versehentliche Betätigen des `Yes`-Button verhindert werden.
+
+* Button1
+* Button2
+* Button3
+
+Die Nummer des Buttons entspricht der Angabe bei Buttons. z.B. `YesNoCancel` bedeutet `Button1` = `OK`, `Button2` = `No`, `Button3` = `Cancel`
+
+#### Button **Event Handler**
+
+(nur Message Box Editor)
 
 Mit diesem Button kann angegeben werden, ob mit dem Klick in der Message-Box (z.B. auf `OK` oder `Cancel`) ein Event angestoßen werden soll oder nicht.
 
@@ -87,15 +113,19 @@ public void OnMsgBoxClick1(object sender, MsgBoxEventArgs e)
 }
 ```
 
-Combobox **Severity** (nur Exception Editor):
+#### Combobox **Severity**
+
+(nur Exception Editor)
 
 Hier können Sie den Schweregrad der Ausnahme (0-3) festlegen.
 
-**Add Inner Exception** (nur Exception Editor):
+#### **Add Inner Exception**
+
+(nur Exception Editor)
 
 Wenn die Checkbox gesetzt ist, können Sie das Property InnerException füllen. Geben Sie dazu die zu übergebende Variable im Textfeld an. Geben Sie dazu im Textfeld den Namen der lokalen Exception-Variable an.
 
-Textbox **String.Format...**:
+#### Textbox **String.Format...**
 
 In dieser Textbox können die Parameter der Message angegeben werden. Es ist möglich im Message Text Parameter anzugeben. Dies geschieht mit `{0}, {1}` usw. Diese Parameter können im Text auch mehrmals verwendet werden. Für jeden dieser Parameter kann hier, mit Komma getrennt, ein Wert angegeben werden. Der erste Parameter steht für `{0}`, der zweite für `{1}` usw.
 
@@ -103,24 +133,28 @@ In dieser Textbox können die Parameter der Message angegeben werden. Es ist mö
 this.oOrder.lngOrderID, this.oOrder.lngCustomerID
 ```
 
-Button **OK**:
+#### Button **OK**
 
 Schließt den Dialog und fügt den generierten Message-Code in den Code-Editor ein.
 
-Button **Cancel**:
+#### Button **Cancel**
 
 Schließt den Dialog und verwirft die Änderungen.
 
 Wenn der Message-Box-Editor mit **OK** verlassen wird, wird an die Stelle im Code, an der sich der Cursor befindet der Code generiert.
 
 ```csharp
-#region Required for MsgBoxEditor support. Do not modify manually.
-//Should the Call {0} be deleted?
-//Buttons: YesNo; Icon:Question
-MsgBox.Show(String.Format(NV.NVSystem.ctMessages.Get(this.Global,2).Value[Global.Sele... //<MsgBox TextColl="Messages" ID ="90b4d563b3544dbfb8fa8e29b0506045" Buttons="4" Icon... #endregion End of generated section
+// FSCodeMessage: Really delete article {0}?
+MsgBox.Show(this.Global.FormatMLKeyText(MLKeys.MSG_9188180c5ac64a5384141b553eef8105, this.oSelectedArticle.sName), "", MsgBoxButtons.YesNo, MsgBoxIcons.Question, new MsgBoxEventHandler(OnDeleteQuestionMsgBoxClick));
 ```
 
-> [!CAUTION]
-> Dieser Code-Block darf nie verändert werden, da sonst spätere Änderungen an der Message-Box nicht mehr möglich sind.
+Durch eine farbige Markierung ist dieser Code im Code-Editor gut zu erkennen.
 
-Um eine Message-Box nachträglich zu ändern, setzen Sie den Fokus irgendwo in den generierten Code-Block und drücken erneut den Button **Message Box Editor Wizard**. Es öffnet sich wieder der Dialog wie oben und die Daten der MessageMessage-Boxbox werden angezeigt und können geändert werden.
+![Examples](media/code-messages-example.png)
+
+Um die Code-Message nachträglich zu ändern, setzen Sie den Fokus irgendwo in den generierten Code-Block und drücken erneut den entsprechenden Wizard-Button. Es öffnet sich wieder der Editor wie oben und die Daten der Code-Message werden angezeigt und können geändert werden.
+
+Bei Bedarf können auch einzelne Bestandteile wie z.B. der MLKey oder ein Enum-Wert direkt im Code geändert werden.
+
+> [!CAUTION]
+> Die Struktur des Code darf jedoch nicht geändert werden, weil dieser sonst für eine spätere Bearbeitung mit dem Editor nicht geparsed werden kann. Der Code darf nicht mehrzeilig sein.

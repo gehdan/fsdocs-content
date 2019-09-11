@@ -1,6 +1,6 @@
 # Operatoren
 
-## `||`
+#### `||`
 
 Verbindet 2 Zeichenketten.
 
@@ -14,7 +14,7 @@ Bei Zeichen-Ketten muss dieser Operator verwendet werden. Der + - Operator ist n
 
 Wenn dennoch der + - Operator verwendet wird, versucht der Parser dies zu korrigieren. Das ist möglich, wenn bei der Operation Zeichen-Ketten oder bestimmte Zeichenketten-Funktionen beteiligt sind. Nicht erkannt wird z.B. das Verbinden von 2 Spalten. In diesem Fall kann es zu Fehlern auf der Ziel-Datenbank kommen.
 
-## `+ - * /`
+#### `+ - * /`
 
 Addiert, subtrahiert, multipliziert bzw. dividiert 2 Zahlenwerte.
 
