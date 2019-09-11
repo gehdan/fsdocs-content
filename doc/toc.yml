@@ -5,6 +5,12 @@ items:
     - name: Options
       href: allgemein/options.md
 
+- name: Code-Editor
+  href: code-editor/index.md
+  items:
+    - name: Code-Messages
+      href: code-editor/code-messages.md
+
 - name: Metadatentypen
   href: mdt/ 
 
