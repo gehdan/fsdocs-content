@@ -64,6 +64,22 @@ Die folgenden Features können ggf. sinnvoll sein:
 * [Pattern matching](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#pattern-matching>) (C# 7.0)
 * [Local functions](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#local-functions>) - aber nur sehr gut überlegt!! (C# 7.0)
 
+## MLKey Wörterbuch
+
+Eine zentrale Neuerung in der Version 4.2 betrifft das Handling der fremdsprachigen Texte. Diese werden jetzt in einem [zentralen Wörterbuch](../doc/mlkey/woerterbuch.md) verwaltet.
+
+Bisher wurden alle Texte am jeweiligen Elementen und Eigenschaften gepflegt. Jetzt werden an allen diesen Stellen Schlüssel (MLKeys) angegeben, die auf das zentrale Wörterbuch verweisen. Dadurch hat man erst einmal etwas mehr organisatorischen Aufwand, aber auf längerer Sicht betrachtet bringt diese Vorgensweise viele Vorteile:
+
+* Redundanzen werden vermieden, weil existierende Texte wiederverwendet werden können und sollen. Dadurch erhält man zudem in der kompletten Anwendung durchgängige und einheitliche Bezeichnungen.
+* Die fremdsprachigen Übersetzungen können sehr einfach und zentral gepflegt werden.
+* Besonders im Customizing-Package ist das von großem Vorteil, weil jetzt nicht mehr die einzelnen Elemente ausgecheckt werden müssen.
+* Das Wörterbuch kann auch im Service-Release bearbeitet werden.
+* Der [Export und Import](../doc/mlkey/import-export.md) von Texten ist sehr einfach. Es wird das standardisierte TMX-Format verwendet. Texte können so zwischen verschiedenen Packages und Versionen ausgetauscht werden. Auch eine Übersetzung durch Werkzeuge oder externe Dienstleister ist dadurch deutlich einfacher als bisher.
+
+Eine detailliert Beschreibung der Funktionalität finden sie im Kapitel [MLKey](../doc/mlkey/woerterbuch.md).
+
+Es ist sinnvoll, die Texte des eigenen Packages in das Wörterbuch zu überführen. Bitte beachten sie dazu die [Hinweise und Anleitungen für die Migration](../doc/mlkey/migration.md).
+
 ## Code-Messages überarbeitet
 
 Die vom Exception- und MessageBox-Wizard generierten [Code-Messages](../doc/code-editor/code-messages.md) wurden überarbeitet.
@@ -98,5 +114,5 @@ Dazu wurden folgende Überladungen ergänzt, bei denen der `null`-Wert zum Zurü
 
 > [!CAUTION]
 > Achtung, falls Reflection verwendet wurde!
->
-> Sollte eine der ursprünglichen Methoden aus irgend einem Grund per Reflection angesprochen worden sein, so kann es nun zu dem Problem kommen, dass nicht mehr eine eindeutige, sondern mehrere Überladungen der Methode gefunden werden. Die Überladungen `SetEnabled(bool value)` und `SetVisible(FSVisibility value)` wurden entfernt, da Aufrufe vom Compiler direkt auf die entsprechenden Nullable-Überladungen umgelenkt werden.
+
+Sollte eine der ursprünglichen Methoden aus irgend einem Grund per Reflection angesprochen worden sein, so kann es nun zu dem Problem kommen, dass nicht mehr eine eindeutige, sondern mehrere Überladungen der Methode gefunden werden. Die Überladungen `SetEnabled(bool value)` und `SetVisible(FSVisibility value)` wurden entfernt, da Aufrufe vom Compiler direkt auf die entsprechenden Nullable-Überladungen umgelenkt werden.
