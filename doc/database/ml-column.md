@@ -7,7 +7,10 @@ Eine beliebige Tabellen-Spalte, in der eine Zeichenkette abgelegt ist, kann im T
 Ist eine Tabellen-Spalte als **MLColumn** gekennzeichnet, dann werden die fremdsprachigen Texte in der Tabelle [dbRun_MLStrings](../tables/dbrun_mlstrings.md) abgelegt. Die normale Tabellen-Spalte beinhaltet die Texte in Default-Sprache.
 
 > [!CAUTION]
-> Fehlt einer Component das Property **ROWID** (mit Mapping auf die DB-Column **FSRowID**), funktioniert der Mechanismus nicht. Die FSRowID wird benötigt, weil dadurch die Relation zur Übersetzungs-Tabelle hergestellt wird.
+>
+> Fehlt einer Component das Property **ROWID** (mit Mapping auf die DB-Column **FSRowID**), ist der Mechanismus für diese Component deaktiviert.
+>
+> **Join-Components** können keine ML-Columns aus mehreren Tabellen verabreiten, da die Component lediglich ein ROWID-Property betrachtet. Werden mehrere ROWID-Properties aus verschiedenen Tabellen eingebunden, dann ist es Zufall, welche ROWID für den MLColumn-Mechanismus herangezogen wird.
 
 ## Customizing-Package
 
@@ -32,6 +35,8 @@ Die ML-Column-Logik wird von den ganz normalen Component-Properties behandelt. D
 * **Update**: Wird der Text geändert, dann wird der Eintrag in der entsprechenden Fremdsprache überschrieben. Der Text in der Default-Sprache kann nicht verändert werden. Wird der fremdsprachige Text geleert, dann wird beim Save der Component der Eintrag aus der Übersetzungs-Tabelle gelöscht und das Component-Property fällt auf die Default-Sprache zurück.
 
 * **Insert**: Beim Anlegen eines neuen Datensatzes wird der eingegebene Text sowohl in der normalen Tabelle als auch in der Fremdsprache gespeichert.
+
+* **Delete**: Wird der Datensatz aus der Datenbank gelöscht, dann werden auch alle zu dieser FSROWID gespeicherten Texte aus der Übersetzungs-Tabelle gelöscht.
 
 > [!IMPORTANT]
 > Die Sprache ist mit dem Start der Anwendung am GlobalObject festgelegt. Es gibt keine Möglichkeit, zur Laufzeit auf die Sprache Einfluss zu nehmen oder die Texte in einer spezifischen Sprache zu behandeln.
