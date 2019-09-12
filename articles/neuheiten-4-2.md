@@ -2,7 +2,7 @@
 
 ## Neue Systemvorraussetzungen
 
-In dieser Version gibt es einige Anpassungen bei den [Systemvoraussetzungen](xref:system-requirements). Im folgenden sind die wichtigsten Änderungen aufgeführt. Die vollständige Liste finden Sie [hier](xref:system-requirements).
+In dieser Version gibt es einige Anpassungen bei den [Systemvoraussetzungen](xref:system-requirements). Im folgenden sind die wichtigsten **Änderungen** aufgeführt.
 
 #### 64 Bit
 

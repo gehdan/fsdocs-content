@@ -16,7 +16,8 @@ Die Bearbeitung des Wörterbuchs erfolgt über den **Multilanguage Text Editor**
 
 ![ML-Editor](media/ml-editor.png)
 
-Die im Grid angezeigten Sprachen und deren Reihenfolge können in den [Options](../allgemein/options.md#languages-in-designer) mit der Einstellung **Languages in designer** eingestellt werden.
+> [!NOTE]
+> Die im Grid angezeigten Sprachen und deren Reihenfolge können in den [Options](../allgemein/options.md#languages-in-designer) mit der Einstellung **Languages in designer** eingestellt werden.
 
 Die Bearbeitung des Wörterbuchs funktioniert ohne Checkout-Mechanismus. Wenn mehrere Benutzer zur gleichen Zeit an denselben MLKeys arbeiten sollten, dann gewinnt derjenige, der zuletzt den Button **Save** drückt.
 

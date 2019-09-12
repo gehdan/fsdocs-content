@@ -1,13 +1,18 @@
 # MLKey Migration
 
-Ziel ist es, dass alle Texte aus den Records entfernt und in das Wörterbuch übertragen werden. Die Records erhalten dafür die MLKeys.
+Ziel ist es, dass alle Texte aus den Records entfernt und in das Wörterbuch übertragen werden. Die Records erhalten dafür Verweise auf Einträge im Wörterbuch, die **MLKeys**.
+
+Generell teilt sich die Migration in zwei große Phasen auf:
+
+1. [MLKeys erzeugen und zuordnen](#mlkeys-erzeugen-und-zuordnen): Diese Phase kann parallel zur Weiterentwicklung durchgeführt werden. Es werden zum Einen neue Einträge im Wörterbuch angelegt und zum Anderen vorgemerkt, wo diese später verwendet werden sollen.
+2. [MLKeys übertragen](#mlkeys-übertragen): In dieser Phase werden primär die vorbereiteten Zuordnungen an die Elemente übertragen: angegebene Texte werden entfernt und statt dessen die gewünschten MLKeys eingetragen. Dazu müssen alle betroffenen Elemente ausgecheckt werden. Zusätzlich werden weitere Umstellungen (z.B. bestehende Messages und Exceptions) durchgeführt.
 
 ## Abwärts-Kompatibilität
 
 Texte, die bisher an den Records definiert sind, funktionieren auch weiterhin, weil jeder MLString neben dem MLKey explizit gesetzte Texte versteht. So kann man nach dem Update auf die Version 4.2 die Migration in aller Ruhe angehen.
 
 > [!NOTE]
-> In Kunden-Umgebungen ist die Umstellung der eigenen Texte auf MLKeys empfohlen. Sie ist aber nicht zwingend notwendig.
+> In Kunden-Packages ist die Umstellung der eigenen Texte auf MLKeys empfohlen. Sie ist aber nicht zwingend notwendig.
 
 Das hat aber langfristig einige Nachteile zur Folge - insbesondere in Hinblick auf die Mehrsprachigkeit der Anwendung:
 
@@ -17,7 +22,74 @@ Das hat aber langfristig einige Nachteile zur Folge - insbesondere in Hinblick a
 > [!IMPORTANT]
 > Funktionale Packages, die als Produkt an mehrere Kunden vertrieben werden, sollten in jedem Fall migriert werden.
 
-## MLKeys zuordnen
+## MLKeys erzeugen und zuordnen
+
+Diese erste Phase der MLKey Migration dient zum Einen der Erzeugung der benötigten Einträge im Wörterbuch (MLKeys) und zum Anderen der Zuordnung, wo diese später verwendet werden sollen.
+
+Zentrales Werkzeug für diese Phase ist der Dialog **Multilanguage Text Migration**, welcher über das Menü **Tools / Multilanguage Text Migration** geöffnet werden kann.
+
+![ML-Migration](media/ml-migration.png)
+
+> [!NOTE]
+> Die im Grid angezeigten Sprachen und deren Reihenfolge können in den [Options](../allgemein/options.md#languages-in-designer) mit der Einstellung **Languages in designer** eingestellt werden.
+
+Alle durch den Benutzer definierten Zuordnungen werden in der Ressource **Migration.xml** im Verzeichnis **FSGeneral/Resources/lang** gespeichert, welche automatisch bei der ersten Benutzung angelegt wird.
+
+Ist diese Datei bei der Bearbeitung mit dem Multilanguage Text Migration Dialog nicht ausgecheckt, so wird beim Speichern mit dem Button **Save** automatisch die neueste Version ausgecheckt, die Änderungen ergänzt und anschließend sofort wieder eingecheckt. Dieses Verhalten ist dann hilfreich, wenn mehrere Benutzer gleichzeitig mit dem Multilanguage Text Migration Dialog arbeiten. Andernfalls empfiehlt es sich, die Datei vor Beginn der Arbeit auszuchecken und erst nach Beendigung der Arbeit wieder einzuchecken. So werden unnötige Checkin- und Checkout-Vorgänge vermieden.
+
+Beim Speichern werden außerdem ggf. ungespeicherte Änderungen am [Wörterbuch](woerterbuch.md) gespeichert.
+
+### Generelles Vorgehen
+
+#### (1) Load Data
+
+> [!IMPORTANT]
+> Zunächst sollten Tooltips außen vor gelassen werden. Dazu darf die Checkbox **Include Tooltips** **NICHT gesetzt** sein, wenn mit dem Button **Load Data** alle im Package angegebenen Texte eingelesen werden.
+> Erst wenn allen Texten ein MLKey zugeordnet wurde, werden die im Folgenden beschriebenen Schritte nach dem erneuten Laden der Daten **inklusive Tooltips** ein zweites Mal durchgeführt.
+
+Die mit dem Button **Load Data** eingelesenen Texte werden in einer Tabelle angezeigt. Die einzelnen Spalten haben folgende Bedeutung:
+
+* **Record**: Name des Elements, an dem der Text angegeben ist, z.B. *frmArticle*.
+* **Element**: Name des Unterelements, an dem der Text angegeben ist, z.B. *edtsName*.
+* **Type**: Typ des Unterelements, z.B. *FormControl*.
+* **Property**: Eigenschaft, an der der Text angegeben ist, z.B. *Caption*.
+* **MLKey**: Der MLKey, welcher zugeordnet werden soll, z.B. *LBL_Name*.
+* **{Sprachen...}**, z.B. **German**, **English** usw.: Der Text, welcher in der jeweiligen Sprache angegeben ist, z.B. *Name*.
+
+Ein Doppleklick in die Spalten **Record** oder **Element** öffnet das Designerfenster für das Element und springt soweit möglich zum Unterelement. In allen anderen Spalten wird beim Doppelklick der Text der Zelle als Filterkriterium in das Feld **Search:** gesetzt.
+
+Für die Filterfunktion mit dem Feld **Search:** gelten folgende Regeln:
+
+* Groß-Kleinschreibung wird ignoriert
+* Es wird in allen Spalten gesucht
+* Es werden nur die Zeilen angezeigt, die ALLE der durch ein Leerzeichen getrennten Buchstabenfolgen enthalten
+* In Anführungsstriche **"** gekapselte Buchstabenfolgen müssen genau so in der Zeile enthalten sein, damit diese angezeigt wird
+
+Beispiel:
+Die Suche nach `LBL_Quantity " geliefert"` zeigt nur die Zeilen an, welche *geliefert* mit einem führenden Leerzeichen und *LBL_Quantity* in irgendeiner Spalte enthalten.
+
+#### (2) Auto Create MLKeys
+
+Nach dem Einlesen der Daten (zunächst ohne Tooltips, siehe [Load Data](#1-load-data)) sollten einmalig mit dem Button **Auto Create MLKeys** alle automatisch erzeugbaren MLKeys in das Wörterbuch eingefügt werden. Automatisch erzeugt werden MLKeys dann, wenn es zu gleichen Texten in einer Sprachen keine abweichenden Texte in anderen Sprachen gibt.
+
+> [!NOTE]
+> Framework Studio weist danach automatisch den Zeilen einen MLKey zu, die nur Texte enthalten, welche zu einem MLKey aus dem Wörterbuch keinen Wiederspruch aufweisen.
+
+#### (3) Manuelle Zuweisungen
+
+Ist die Checkbox **Show only missing keys** gesetzt, so wird die Anzeige aller Texte in der Tabelle auf die Einträge reduziert, welchen bisher noch kein MLKey zugewiesen wurde - die noch zu bearbeitenden Einträge.
+
+Im unteren Bereich des Multilanguage Migration Dialogs werden im Bereich **Details** zum aktuell in der Tabelle selektierten Eintrag alle Eigenschaften angezeigt. Ist bereits ein MLKey zugewiesen, werden die Texte des MLKeys in der Tabellenspalte **In MLKey** angezeigt.
+
+In der oberen Tabelle können auch mehrere Zeilen gleichzeitig ausgewählt werden. So kann mehreren Zeilen gleichzeitig ein MLKey zugewiesen werden. Für die Zuweisung stehen mehrere Optionen zur Verfügung:
+
+* Mit dem Button ![Lupe](media/btn-search-mlkey.png) im Bereich **Details** kann ein bereits existierender MLKey ausgewählt werden, siehe [Multilanguage Text Editor](woerterbuch.md#multilanguage-text-editor), insbesondere [Suchen von MLKeys](woerterbuch.md#suchen-von-mlkeys).
+* Wurde bereits ein MLKey zugewiesen, so wird ein weiterer Button **Set ...** angeboten, mit dem der zuletzt zugewiesene MLKey den aktuell selektierten Zeilen zugewiesen werden kann.
+* Mit dem Button ![Add](media/btn-add-mlkey.png) im Bereich **Details** kann ein neuer MLKey erzeugt werden. Dazu werden die Texte aus allen selektierten Zeilen berücksichtigt.
+
+Mit dem Button **Rename MLKey** ist es im Rahmen der Migration möglich, einen bestehenden MLKey umzubenennen. Alle manuellen Zuordnungen dieses MLKeys werden automatisch angepasst.
+
+## MLKeys in Custom-Packages
 
 Im Customizing kann man grundsätzlich 2 verschiedene Arten von überschriebenen Texten unterscheiden:
 
@@ -25,7 +97,7 @@ Im Customizing kann man grundsätzlich 2 verschiedene Arten von überschriebenen
 
     Wenn z.B. ein relativ allgemeiner Metadatentyp in einem Component-Property verwendet wird, wird dort am Default-Label ein neuer Text formuliert.
 
-    In diesen Fällen sollte auf jeden Fall ein entsprechender ggf. neuer MLKey zugeordnet werden.
+    In diesen Fällen sollte auf jeden Fall ein entsprechender (ggf. neuer) MLKey zugeordnet werden.
 
 2. Ändern eines bestehenden Textes.
 
