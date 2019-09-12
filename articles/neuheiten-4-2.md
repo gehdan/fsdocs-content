@@ -68,7 +68,7 @@ Die folgenden Features können ggf. sinnvoll sein:
 
 Eine zentrale Neuerung in der Version 4.2 betrifft das Handling der fremdsprachigen Texte. Diese werden jetzt in einem [zentralen Wörterbuch](../doc/mlkey/woerterbuch.md) verwaltet.
 
-Bisher wurden alle Texte am jeweiligen Elementen und Eigenschaften gepflegt. Jetzt werden an allen diesen Stellen Schlüssel (MLKeys) angegeben, die auf das zentrale Wörterbuch verweisen. Dadurch hat man erst einmal etwas mehr organisatorischen Aufwand, aber auf längerer Sicht betrachtet bringt diese Vorgensweise viele Vorteile:
+Bisher wurden alle Texte am jeweiligen Element (z.B. Metadatentyp, ComponentProperty, FormControl) gepflegt. Jetzt werden an allen diesen Stellen Schlüssel (MLKeys) angegeben, die auf das zentrale Wörterbuch verweisen. Dadurch hat man erst einmal etwas mehr organisatorischen Aufwand, aber auf längerer Sicht betrachtet bringt diese Vorgensweise viele Vorteile:
 
 * Redundanzen werden vermieden, weil existierende Texte wiederverwendet werden können und sollen. Dadurch erhält man zudem in der kompletten Anwendung durchgängige und einheitliche Bezeichnungen.
 * Die fremdsprachigen Übersetzungen können sehr einfach und zentral gepflegt werden.
