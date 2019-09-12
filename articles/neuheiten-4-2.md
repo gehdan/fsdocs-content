@@ -1,8 +1,10 @@
 # Neuheiten Framework Studio 4.2
 
+Informationen zu aktuellen Versionen und korrigierten Fehlern finden Sie in den [Release-Informationen](release-4-2.md).
+
 ## Neue Systemvorraussetzungen
 
-In dieser Version gibt es einige Anpassungen bei den [Systemvoraussetzungen](xref:system-requirements). Im folgenden sind die wichtigsten Änderungen aufgeführt. Die vollständige Liste finden Sie [hier](xref:system-requirements).
+In dieser Version gibt es einige Anpassungen bei den [Systemvoraussetzungen](requirements.md). Im folgenden sind die wichtigsten Änderungen aufgeführt. Die vollständige Liste finden Sie [hier](requirements.md).
 
 #### 64 Bit
 
@@ -13,10 +15,16 @@ Die folgenden Programme können nur noch auf 64-Bit Systemen installiert werden.
 * Anwendungs-Broker
 * Framework Studio Services
 
-32-Bit wird weiterhin für die folgenden Programme unterstützt:
+32-Bit wird weiterhin unterstützt für:
 
 * Client-Rechner
 * Print-Server
+
+#### .NET Framework 4.8
+
+Framework Studio setzt auf das .NET Framework 4.8 auf. Dieses wird beim Ausführen der Installations-Routine (nach Rückfrage) automatisch installiert. Es ist nicht mehr im Requirements-Packet enthalten.
+
+Für eine manuelle Installation finden Sie das .NET Framework 4.8 direkt bei Microsoft unter <https://dotnet.microsoft.com/download/dotnet-framework/net48>.
 
 #### Betriebssysteme
 
@@ -47,16 +55,16 @@ Der Oracle ODP Provider ist veraltet (deprecated) und wird nicht mehr supported.
 
 ## C# 7
 
-Mit dem Update auf das .net Framework 4.8 unterstützt Framework Studio auch die C# Sprach-Features bis zur Version 7.3. Eine Übersicht der Features bietet die folgende Web-Seite:
+Mit dem Update auf das .net Framework 4.8 unterstützt Framework Studio auch die C# Sprach-Features bis zur Version 7.3. Eine Übersicht der Features bietet die Web-Seite:
 
 * <https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7>
 
 In der folgenden Liste werden einige Features genannt, die seit C# 6 hinzugekommen sind.
-Der Einsatz des folgenden Features ist in Framework-Studio empfehlenswert:
+Der Einsatz dieses Features ist in Framework-Studio empfehlenswert:
 
 * [out variables](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#out-variables>) - inline-Deklaration (C# 7.0)
 
-Die folgenden Features können ggf. sinnvoll sein:
+Folgende Features können ggf. sinnvoll sein:
 
 * [Tuples](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#tuples>) (C# 7.0)
 * [Inferred tuple element names](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7-1#inferred-tuple-element-names>) (C# 7.1)

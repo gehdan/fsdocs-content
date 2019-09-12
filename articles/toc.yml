@@ -1,9 +1,10 @@
 items:
   - name: Neuheiten
-    href: index.md
     items:
-      - name: Version 4.2
+      - name: Neuheiten 4.2
         href: neuheiten-4-2.md
+      - name: Release 4.2
+        href: release-4-2.md
 
   - name: Systemvoraussetzungen
     href: requirements.md

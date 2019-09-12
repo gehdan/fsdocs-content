@@ -21,7 +21,7 @@ Es werden ausschließlich **64-Bit** Systeme unterstützt.
 
 #### .NET Framework
 
-* Microsoft .NET Framework 4.8 - oder höher
+* .NET Framework 4.8 - oder höher <https://dotnet.microsoft.com/download/dotnet-framework/net48>
 
 #### Weitere Software
 
@@ -49,7 +49,7 @@ Es werden ausschließlich **64-Bit** Systeme unterstützt.
 
 #### .NET Framework
 
-* Microsoft .NET Framework 4.8 - oder höher
+* [.NET Framework 4.8](<https://dotnet.microsoft.com/download/dotnet-framework/net48>) - oder höher
 
 #### Weitere Software
 
@@ -80,7 +80,7 @@ Es wird der Einsatz eines 64-Bit Betriebssystems empfohlen. Wenn z.B. ein spezie
 #### Weitere Software
 
 * [Crystal Reports Runtime](#crystal-reports-runtime)
-* .NET Framework 4.8 - oder höher
+* [.NET Framework 4.8](<https://dotnet.microsoft.com/download/dotnet-framework/net48>) - oder höher
 
 ## Authentication-Server
 
