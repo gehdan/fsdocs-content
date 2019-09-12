@@ -1,6 +1,8 @@
 {
     "cSpell.language": ",de,en",
     "cSpell.words": [
+        "FSROWID",
+        "ROWID",
         "arial",
         "ausgegrauten",
         "dateadd",
@@ -13,8 +15,8 @@
         "f",
         "frameworkstudio",
         "getdate",
-        "getutcdate",
         "getguid",
+        "getutcdate",
         "likeescape",
         "ltrim",
         "memberpage",
@@ -34,9 +36,6 @@
         "slong",
         "smallint",
         "sshort",
-        "metadatatypen",
-        "sbyte",
-        "smallint",
         "sstring",
         "stdev",
         "sysdate",
