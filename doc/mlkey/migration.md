@@ -53,7 +53,8 @@ Die Begriffe *Suche mit SQL*, *Suchen mit SQL*, *SQL Suche*, *SQL-Suche*, *Suche
 > Zunächst sollten Tooltips außen vor gelassen werden. Dazu darf die Checkbox **Include Tooltips** **NICHT gesetzt** sein, wenn mit dem Button **Load Data** alle im Package angegebenen Texte eingelesen werden.
 > Erst wenn allen Texten ein MLKey zugeordnet wurde, werden die im Folgenden beschriebenen Schritte nach dem erneuten Laden der Daten **inklusive Tooltips** ein zweites Mal durchgeführt.
 
-> [!NOTE] Wenn durch ein Basis-Package bereits Einträge im Wörterbuch existieren, so wird Framework Studio nach dem Laden automatisch einem mehrsprachigen Text aus dem Custom-Package den MLKey zuweisen, der mindestens in den angegebenen Sprachen die Texte in exakt der Schreibweise enthält.
+> [!NOTE]
+> Wenn durch ein Basis-Package bereits Einträge im Wörterbuch existieren, so wird Framework Studio nach dem Laden automatisch einem mehrsprachigen Text aus dem Custom-Package den MLKey zuweisen, der mindestens in den angegebenen Sprachen die Texte in exakt der Schreibweise enthält.
 
 Die mit dem Button **Load Data** eingelesenen Texte werden in einer Tabelle angezeigt. Die einzelnen Spalten haben folgende Bedeutung:
 
