@@ -41,11 +41,19 @@ Beim Speichern werden außerdem ggf. ungespeicherte Änderungen am [Wörterbuch]
 
 ### Generelles Vorgehen
 
+Die zu leistende Arbeit besteht in erster Linie darin, logisch identische Begriffe zusammenzuführen und logisch unterschiedliche Begriffe, die ggf. in einzelnen Sprachen Überlappungen mit anderen Begriffen haben, zu trennen.
+
+Beispiel:
+
+Die Begriffe *Suche mit SQL*, *Suchen mit SQL*, *SQL Suche*, *SQL-Suche*, *Suchen SQL*, *Sql Suche* und weitere Varianten sollten zu einem einzigen Eintrag zusammengefasst werden.
+
 #### (1) Load Data
 
 > [!IMPORTANT]
 > Zunächst sollten Tooltips außen vor gelassen werden. Dazu darf die Checkbox **Include Tooltips** **NICHT gesetzt** sein, wenn mit dem Button **Load Data** alle im Package angegebenen Texte eingelesen werden.
 > Erst wenn allen Texten ein MLKey zugeordnet wurde, werden die im Folgenden beschriebenen Schritte nach dem erneuten Laden der Daten **inklusive Tooltips** ein zweites Mal durchgeführt.
+
+> [!NOTE] Wenn durch ein Basis-Package bereits Einträge im Wörterbuch existieren, so wird Framework Studio nach dem Laden automatisch einem mehrsprachigen Text aus dem Custom-Package den MLKey zuweisen, der mindestens in den angegebenen Sprachen die Texte in exakt der Schreibweise enthält.
 
 Die mit dem Button **Load Data** eingelesenen Texte werden in einer Tabelle angezeigt. Die einzelnen Spalten haben folgende Bedeutung:
 
@@ -55,6 +63,8 @@ Die mit dem Button **Load Data** eingelesenen Texte werden in einer Tabelle ange
 * **Property**: Eigenschaft, an der der Text angegeben ist, z.B. *Caption*.
 * **MLKey**: Der MLKey, welcher zugeordnet werden soll, z.B. *LBL_Name*.
 * **{Sprachen...}**, z.B. **German**, **English** usw.: Der Text, welcher in der jeweiligen Sprache angegeben ist, z.B. *Name*.
+
+Die Spalten können durch anklicken der Spaltenüberschrift sortiert werden. Meist wird man nach deutschem Text sortiert arbeiten.
 
 Ein Doppelklick in die Spalten **Record** oder **Element** öffnet das Designerfenster für das Element und springt soweit möglich zum Unterelement. In allen anderen Spalten wird beim Doppelklick der Text der Zelle als Filterkriterium in das Feld **Search:** gesetzt.
 
@@ -85,13 +95,38 @@ In der oberen Tabelle können auch mehrere Zeilen gleichzeitig ausgewählt werde
 
 * Mit dem Button ![Lupe](media/btn-search-mlkey.png) im Bereich **Details** kann ein bereits existierender MLKey ausgewählt werden, siehe [Multilanguage Text Editor](woerterbuch.md#multilanguage-text-editor), insbesondere [Suchen von MLKeys](woerterbuch.md#suchen-von-mlkeys).
 * Wurde bereits ein MLKey zugewiesen, so wird ein weiterer Button **Set ...** angeboten, mit dem der zuletzt zugewiesene MLKey den aktuell selektierten Zeilen zugewiesen werden kann.
-* Mit dem Button ![Add](media/btn-add-mlkey.png) im Bereich **Details** kann ein neuer MLKey erzeugt werden. Dazu werden die Texte aus allen selektierten Zeilen berücksichtigt.
+* Mit dem Button ![Add](media/btn-add-mlkey.png) im Bereich **Details** kann ein neuer MLKey  (basierend auf den selektierten Zeilen) erzeugt werden.
+
+Wenn beim Erzeugen eines neuen MLKeys mehrere Zeilen ausgewählt wurden und diese in einzelnen Sprachen abweichende Texte enthalten, so wird pro Sprache bei Bedarf der folgende Dialog geöffnet:
+
+![ML-Migration](media/select-text.png)
+
+In diesem werden alle Varianten, sortiert nach Häufigkeit absteigend, aufgeführt. Durch Selektion und Bestätigung mit dem Button **OK** oder durch Doppelklick wird die Auswahl als Vorbelegung für den neuen MLKey verwendet (siehe [Erfassen neuer MLKeys](woerterbuch.md#erfassen-neuer-mlkeys)).
+
+> [!IMPORTANT]
+> Bei der Zuweisung und Erzeugung von MLKeys sind die [eNVenta Regeln für MLKeys](eNVenta-regeln.md) zu beachten.
 
 Mit dem Button **Rename MLKey** ist es im Rahmen der Migration möglich, einen bestehenden MLKey umzubenennen. Alle manuellen Zuordnungen dieses MLKeys werden automatisch angepasst.
 
-## MLKeys in Custom-Packages
+#### (4) Bereinigungen
 
-Im Customizing kann man grundsätzlich 2 verschiedene Arten von überschriebenen Texten unterscheiden:
+Im Wörterbuch werden sich durch die vorangegangenen Schritte (z.B. durch die von Framework Studio automatisch generierten MLKeys) einige Unsauberkeiten eingeschlichen haben. Daher sind die folgenden Maßnahmen empfehlenswert:
+
+Maßnahmen im Wörterbuch:
+
+* Sortierung nach MLKey: Folgen aufeinander logisch identische Begriffe?
+* Suche Nach `_1`, `_2`, `_3` usw: Sind diese Varianten nötig oder sollten anders benannt werden?
+* Sortierung nach deutschem Text: Folgen aufeinander logisch identische Begriffe? In Custom-Packages sind dabei nur die MLKeys aus dem eigenen Package (zu erkennen an der Fettschreibung) und ihre Vorgänger und Nachfolger interessant.
+
+Außerdem können im Multilanguage Text Migration Dialog mit dem Button **Find unused MLKeys** alle MLKeys aus dem eigenen Package aufgelistet werden, welche im Wörterbuch existieren, jedoch nirgendwo zugeordnet sind. Diese gilt es, kritisch zu prüfen.
+
+#### (5) Abschluss Phase 1
+
+Wurden die vorigen Schritte (zunächst ohne Tooltips, danach mit Tooltips) abgeschlossen, so kann nun mit Phase 2 ([MLKeys übertragen](#mlkeys-übertragen)) fortgefahren werden.
+
+### MLKeys in Custom-Packages
+
+Im Customizing kann man grundsätzlich 2 verschiedene Arten von **überschriebenen** Texten unterscheiden:
 
 1. Texte, die eine ganz neue Bedeutung haben.
 
@@ -107,7 +142,7 @@ Im Customizing kann man grundsätzlich 2 verschiedene Arten von überschriebenen
 
 ## MLKeys übertragen
 
-Ist das Wörterbuch komplett vorbereitet, ist es an der Zeit, die MLKeys in die Records zu übertragen.
+Ist das Wörterbuch komplett vorbereitet (siehe [MLKeys erzeugen und zuordnen](#mlkeys-erzeugen-und-zuordnen)), ist es an der Zeit, die MLKeys in die Records zu übertragen.
 
 In diesem Schritt werden alle Aktionen ausgeführt, die einen Checkout der Records zur Folge haben. So wird die ggf. erhebliche Menge an Checkouts auf das nötigste reduziert.
 
