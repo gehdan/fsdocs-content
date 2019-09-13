@@ -1,8 +1,13 @@
 
 .toc .nav > li {
   font-size: 10pt;
-  margin-bottom: 2pt;
-  margin-top: 1pt;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.toc .nav > li > a {
+  margin-top: 0;
+  margin-bottom: 4pt;
 }
 
 .toc .nav .level1 {
