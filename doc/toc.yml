@@ -38,7 +38,14 @@ items:
       href: code-editor/code-messages.md
 
 - name: Metadatentypen
-  href: mdt/ 
+  href: mdt/metadatentypen.md
+  items:
+    - name: Format Pattern
+      href: mdt/format-pattern.md
+    - name: Vererbung
+      href: mdt/vererbung.md
+    - name: Validierung
+      href: mdt/validierung.md
 
 - name: Database
   items:
@@ -77,5 +84,16 @@ items:
     - name: ML_Config (Business)
       href: tables/ml_config.md
 
-- name: HTML-Client
-  href: html-client/
+- name: HTML-Client (Beta)
+  href: html-client/index.md
+  items:
+    - name: Android App
+      href: html-client/android-app.md
+    - name: Hinweise zu Lizenzen
+      href: html-client/lizenzen.md
+    - name: Funktionsumfang
+      href: html-client/funktionsumfang.md
+    - name: Controls
+      href: html-client/controls.md
+    - name: Gerätespezifische Funktionen
+      href: html-client/geraete-funktionen.md
