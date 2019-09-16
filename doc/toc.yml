@@ -31,6 +31,23 @@ items:
     - name: ML-Column
       href: database/ml-column.md
 
+- name: Dokumentations-System
+  items:
+    - name: Dokumentations-System
+      href: documentation/dokumentations-system.md
+    - name: DocML
+      href: documentation/docml.md
+    - name: Editor
+      href: documentation/editor.md
+    - name: Vererbung
+      href: documentation/vererbung.md
+    - name: Customizing
+      href: documentation/customizing.md
+    - name: "Control Features"
+      href: documentation/control-features.md
+    - name: "Chapter Tree"
+      href: documentation/chapter-tree.md
+
 - name: Components
   href: comp/
 
