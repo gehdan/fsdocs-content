@@ -37,6 +37,16 @@ th:empty {
   border: 0 !IMPORTANT;
 }
 
+div.propertyInfo {
+  margin-bottom: 15pt;
+}
+
+span.parametername {
+  font-weight: 600;
+  margin-right: 5pt;
+  font-style: normal;
+}
+
 /* EXPERIMENTAL LAYOUT
 
 body .toc{
