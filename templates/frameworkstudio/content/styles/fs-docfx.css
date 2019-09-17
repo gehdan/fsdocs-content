@@ -30,6 +30,13 @@
   font-weight: bold;
 }
 
+th:empty {
+  font-size: 0px;
+  margin: 0;
+  padding: 0 !IMPORTANT;
+  border: 0 !IMPORTANT;
+}
+
 /* EXPERIMENTAL LAYOUT
 
 body .toc{
