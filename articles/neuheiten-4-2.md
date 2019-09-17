@@ -66,11 +66,11 @@ Der Einsatz dieses Features ist in Framework-Studio empfehlenswert:
 
 Folgende Features können ggf. sinnvoll sein:
 
-* [Tuples](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#tuples>) (C# 7.0)
+* [Tuples](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#tuples>) (C# 7.0) - nur innerhalb von Methoden-Code (z.B. bei Linq-Queries), nicht als Parameter oder Rückgabe-Typ von Methoden
 * [Inferred tuple element names](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7-1#inferred-tuple-element-names>) (C# 7.1)
 * [Tuples support == and !=](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7-3#tuples-support--and->) (C# 7.3)
 * [Pattern matching](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#pattern-matching>) (C# 7.0)
-* [Local functions](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#local-functions>) - aber nur sehr gut überlegt!! (C# 7.0)
+* [Local functions](<https://docs.microsoft.com/de-de/dotnet/csharp/whats-new/csharp-7#local-functions>) (C# 7.0) - aber nur sehr gut überlegt!! 
 
 ## MLKey Wörterbuch
 
