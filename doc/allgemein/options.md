@@ -20,7 +20,7 @@ Wird die Checkbox **Disable** gesetzt, wird in der Framework Studio Umgebung kei
 
 Zeigt an den Controls im Form-Designer an, ob eine Dokumentation gepflegt ist, bzw vererbt wurde.
 
-![Doc Indicators](../documentation/media/documentation-indicators.png)
+Siehe [Dokumentationsstatus von Steuerelementen](../documentation/indicators.md)
 
 **Show form designer grid**:
 

@@ -47,6 +47,12 @@ items:
       href: documentation/control-features.md
     - name: "Chapter Tree"
       href: documentation/chapter-tree.md
+    - name: "Export Wizards"
+      href: documentation/export-wizards.md
+    - name: "Doc2Help"
+      href: documentation/doc2help.md
+    - name: "Dokumentationsstatus von Steuerelementen"
+      href: documentation/indicators.md
 
 - name: Components
   href: comp/
