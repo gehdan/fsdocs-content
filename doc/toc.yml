@@ -52,6 +52,23 @@ items:
     - name: ML-Column
       href: database/ml-column.md
 
+- name: Themes
+  items:
+    - name: Einführung
+      href: themes/einfuehrung.md
+    - name: Verwalten
+      href: themes/verwalten.md
+    - name: "Zwischen Themes wechseln"
+      href: themes/zwischen-themes-wechseln.md
+    - name: "Themeable Properties"
+      href: "themes/themeable-properties.md"
+    - name: "Properties Theme-abhängig ändern"
+      href: "themes/properties-theme-abhaengig-aendern.md"
+    - name: "Hierarchie bei mehreren Packages und Themes"
+      href: "themes/hierarchie-bei-mehreren-package-und-themes.md"
+    - name: Aufräum-Routine
+      href: "themes/aufraeum-routine.md"
+
 - name: Dokumentations-System
   items:
     - name: Dokumentations-System
@@ -68,6 +85,12 @@ items:
       href: documentation/control-features.md
     - name: "Chapter Tree"
       href: documentation/chapter-tree.md
+    - name: "Export Wizards"
+      href: documentation/export-wizards.md
+    - name: "Doc2Help"
+      href: documentation/doc2help.md
+    - name: "Dokumentationsstatus von Steuerelementen"
+      href: documentation/indicators.md
 
 - name: Components
   href: comp/
