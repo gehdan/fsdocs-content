@@ -5,6 +5,36 @@ items:
     - name: Options
       href: allgemein/options.md
 
+- name: Framework Studio IDE
+  href: ide/framework-designer.md
+  items:
+    - name: "Anwendung Starten"
+      href: ide/anwendung-starten.md
+    - name: Registerkarten in Designer
+      href: ide/registerkarten.md
+    - name: Allgemeine Funktionalitäten
+      href: ide/allgemeine-funktionatitaeten.md
+    - name: Bearbeiten von Elementen
+      href: ide/bearbeiten-von-elementen.md
+    - name: Code Builder
+      href: ide/code-builder.md
+    - name: Application
+      href: ide/application.md
+    - name: References
+      href: ide/references.md
+    - name: Framework Compiler
+      href: ide/framework-compiler.md
+    - name: Documentation
+      href: ide/dokumentation.md
+    - name: View Menü
+      href: ide/view-menu.md
+    - name: Tools Menü
+      href: ide/tools-menu.md
+    - name: Compiler Menü
+      href: ide/compile-menu.md
+    - name: Window Menü
+      href: ide/window-menu.md
+
 - name: Konzepte
   items:
     - name: FS-Datentypen
@@ -28,6 +58,10 @@ items:
 
 - name: Database
   items:
+    - name: Datasources
+      href: database/datasource.md
+    - name: DBTables
+      href: database/dbtable.md
     - name: ML-Column
       href: database/ml-column.md
 
@@ -73,6 +107,12 @@ items:
 
 - name: Components
   href: comp/
+
+- name: Resources
+  href: resources/resources.md
+
+- name: Packages
+  href: package/packages.md
 
 - name: Sql-Syntax
   href: sql/syntax.md

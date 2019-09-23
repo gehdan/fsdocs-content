@@ -36,7 +36,7 @@ Die beiden Elemente, die das Fundament des Dokumentationssystems bilden, sind da
 
 ### Form
 
-Sie erkennen Form an einem ![form-icon](../media/îcon-frm.png)-Icon.
+Sie erkennen Form an einem ![form-icon](../media/icon-frm.png)-Icon.
 
 Elemente des Forms mit Dokumentation:
 
