@@ -39,9 +39,9 @@ In den Compile-Verzeichnissen existieren immer die folgenden Unterordner:
 
 Wenn Sie Ihre Anwendung während der Entwicklung zum Testen starten wollen, verwenden Sie dazu den [Development-Broker](#development-broker).
 
-Dieser wird mit den Menüpunkt **Compile / Run** (oder mit der Taste **F5**) mit den zuletzt im [Run-Wizard](../publish/wizards.md#run-wizard) vorgenommenen Einstellungen gestartet.
+Dieser wird mit den Menüpunkt **Compile / Run** (oder mit der Taste **F5**) mit den zuletzt im [Run-Wizard](!TODO LINK) vorgenommenen Einstellungen gestartet.
 
-Wenn Sie die Einstellungen für den Start der Applikation (z.B. andere Business Datenbank verwenden) ändern möchten, öffnen Sie mit dem Menüpunkt **Compile / Run…** (oder der Tastenkombination **Umschalt + F5**) den [Run-Wizard](../publish/wizards.md#run-wizard). Dort können alle Einstellungen vorgenommen werden. Wenn Sie den Wizard anschließend mit **Run** beenden, wird die ausgewählte Applikation mit den vorgenommenen Einstellungen gestartet.
+Wenn Sie die Einstellungen für den Start der Applikation (z.B. andere Business Datenbank verwenden) ändern möchten, öffnen Sie mit dem Menüpunkt **Compile / Run…** (oder der Tastenkombination **Umschalt + F5**) den [Run-Wizard](!TODO LINK). Dort können alle Einstellungen vorgenommen werden. Wenn Sie den Wizard anschließend mit **Run** beenden, wird die ausgewählte Applikation mit den vorgenommenen Einstellungen gestartet.
 
 ## Debugging
 

@@ -114,6 +114,51 @@ items:
 - name: Packages
   href: package/packages.md
 
+- name: Forms
+  items:
+    - name: Designer
+      href: form/designer.md
+    - name: Layout-Konzept
+      href: form/layout-konzept.md
+    - name: Default Control Styles
+      href: form/default-control-styles.md
+    - name: Controls
+      items:
+        - name: Events
+          href: form/control/events.md
+        - name: IsVisibleAU / IsEditableAu
+          href: form/control/is-visible-editable-au.md
+        - name: Button
+          href: form/control/button.md
+        - name: CheckBox
+          href: form/control/checkbox.md
+        - name: ComboBox
+          href: form/control/combobox.md
+        - name: ContextMenu
+          href: form/control/context-menu.md
+        - name: DashboardContainer
+          href: form/control/dashboard-container.md
+        - name: EditField
+          href: form/control/editfield.md
+        - name: FormContainer
+          href: form/control/form-container.md
+        - name: Grid
+          href: form/control/grid.md
+        - name: Grid-Column
+          href: form/control/grid-column.md
+        - name: Image Button
+          href: form/control/image-button.md
+        - name: Label
+          href: form/control/label.md
+        - name: Listbox
+          href: form/control/listbox.md
+        - name: Menu-Item
+          href: form/control/menu-item.md
+        - name: Picture
+          href: form/control/picture.md
+    - name: "Erzeugen eines Suchdialogs durch Property-Funktionalität"
+      href: form/control/erzeugen-suchdialogs-property.md
+
 - name: Sql-Syntax
   href: sql/syntax.md
   items:

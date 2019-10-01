@@ -51,9 +51,9 @@ Diese Funktion verwendet im Hintergrund den [**Compile Manager**](#compile-manag
 
 ## Run / Run…
 
-Mit dem Menüeintrag **Run** werden die Testumgebung ([**Start / Stop current development FSDomain**](#start--stop-current-development-fsdomain)) und ein Client für die Applikation gestartet. Es werden dazu die zuletzt im [**Run-Wizard**](../publish/wizards.md#run-wizard) vorgenommenen Einstellungen verwendet.
+Mit dem Menüeintrag **Run** werden die Testumgebung ([**Start / Stop current development FSDomain**](#start--stop-current-development-fsdomain)) und ein Client für die Applikation gestartet. Es werden dazu die zuletzt im [**Run-Wizard**](!TODO LINK) vorgenommenen Einstellungen verwendet.
 
-Mit dem Menüeintrag **Run…** wird zunächst der [**Run-Wizard**](../publish/wizards.md#run-wizard) gestartet und anschließend die Testumgebung mit Client für die Applikation gestartet.
+Mit dem Menüeintrag **Run…** wird zunächst der [**Run-Wizard**](!TODO LINK) gestartet und anschließend die Testumgebung mit Client für die Applikation gestartet.
 
 ## Run Without Compile
 
@@ -65,7 +65,7 @@ Mit dem Menüeintrag **Run…** wird zunächst der [**Run-Wizard**](../publish/w
 
 ## Start / Stop current development FSDomain
 
-Mit dem Menüeintrag **Start current development FSDomain** starten Sie alle im [**Run-Wizard**](../publish/wizards.md#run-wizard) konfigurierten Dienste (Service Hosts) und den Development Broker ([**Development-Broker**](anwendung-starten.md#development-broker)).
+Mit dem Menüeintrag **Start current development FSDomain** starten Sie alle im [**Run-Wizard**](!TODO LINK) konfigurierten Dienste (Service Hosts) und den Development Broker ([**Development-Broker**](anwendung-starten.md#development-broker)).
 
 Mit dem Menüeintrag **Stop development FSDomain** wird der Development Broker beendet.
 
