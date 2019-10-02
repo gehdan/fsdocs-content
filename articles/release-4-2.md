@@ -1,5 +1,11 @@
 # Release-Information Framework Studio 4.2
 
+## 4.2 Beta 3 (noch nicht veröffentlicht)
+
+#### Neue Funktionen
+
+* [Barcode-Scanner](../doc/html-client/barcode.md) im Mobile-Client
+
 ## 4.2 Beta 2 (18.09.2019)
 
 Die Auslieferung umfasst das Paket

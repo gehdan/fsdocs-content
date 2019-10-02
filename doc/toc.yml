@@ -220,5 +220,5 @@ items:
       href: html-client/funktionsumfang.md
     - name: Controls
       href: html-client/controls.md
-    - name: Gerätespezifische Funktionen
-      href: html-client/geraete-funktionen.md
+    - name: Barcode Scanner
+      href: html-client/barcode.md
