@@ -45,45 +45,57 @@ Mit dem Button **Add** öffnet sich ein Dialog, in dem der neue MLKey erfasst we
 
 ![Add new MLKey](media/add-new-mlkey.png)
 
-* **MLKey**: Hier wird der MLKey angegeben. Im Customizing-Package wird der Package-Code automatisch vorbelegt.
+#### Textfeld **MLKey**
 
-  > [!NOTE]
-  > Der MLKey kann zu einem späteren Zeitpunkt nicht mehr geändert werden.
+Hier wird der MLKey angegeben. Im Customizing-Package wird der Package-Code automatisch vorbelegt.
 
-  Der MLKey kann frei vergeben werden, es gibt jedoch ein paar Regeln und Empfehlungen:
+> [!NOTE]
+> Der MLKey kann zu einem späteren Zeitpunkt nicht mehr geändert werden.
 
-  * Es handelt sich um einen C#-Identifier, der auch im Quellcode verwendet wird.
-    * Buchstaben, Zahlen, Unterstrich
-    * Groß-Klein-Schreibung ist relevant
-  * Der sprechende Name sollte sich nach Möglichkeit an den englischen Text anlehnen.
-    * z.B. `LBL_Article`
-  * Wenn der Text zu komplex ist - z.B. bei Messages oder Tooltips, dann kann der Name eine Guid enthalten. Diese kann mit dem Button **Generate Guid** angefügt werden.
-    * z.B. `MSG_1c9f3024dfc340dfba0651cb92d90ad6`
-  * In Customizing-Packages erhält der MLKey einen Package-Code. Dieser wird automatisch vorbelegt.
-    * z.B. `LBL_K87_SpecialArticle`
-  * In der **eNVenta/WS** Standard-Entwicklung sind entsprechende [Namensregeln](enventa-regeln.md) einzuhalten.
+Der MLKey kann frei vergeben werden, es gibt jedoch ein paar Regeln und Empfehlungen:
 
-  Wird dieser Dialog aus der MLKey-Suche heraus geöffnet, dann wird abhängig vom jeweiligen Context auch ein passender Präfix vorbelegt:
+* Es handelt sich um einen C#-Identifier, der auch im Quellcode verwendet wird.
+  * Buchstaben, Zahlen, Unterstrich
+  * Groß-Klein-Schreibung ist relevant
+* Der sprechende Name sollte sich nach Möglichkeit an den englischen Text anlehnen.
+  * z.B. `LBL_Article`
+* Wenn der Text zu komplex ist - z.B. bei Messages oder Tooltips, dann kann der Name eine Guid enthalten. Diese kann mit dem Button **Generate Guid** angefügt werden.
+  * z.B. `MSG_1c9f3024dfc340dfba0651cb92d90ad6`
+* In Customizing-Packages erhält der MLKey einen Package-Code. Dieser wird automatisch vorbelegt.
+  * z.B. `LBL_K87_SpecialArticle`
+* In der **eNVenta/WS** Standard-Entwicklung sind entsprechende [Namensregeln](enventa-regeln.md) einzuhalten.
 
-  * `LBL_` / `LBL_<PackageCode>_`: Der Suchdialog wurde z.B. aus einem Caption- oder Default-Label-Property aufgerufen.
-  * `TTT_` / `TTT_<PackageCode>_`: Der Suchdialog wurde aus dem Tooltip-Property aufgerufen.
-  * `MSG_` / `MSG_<PackageCode>_`: Der Suchdialog wurde aus dem MessageBox- bzw. Exception-Wizard aufgerufen.
+Wird dieser Dialog aus der MLKey-Suche heraus geöffnet, dann wird abhängig vom jeweiligen Context auch ein passender Präfix vorbelegt:
 
-* **Comment**: Der Kommentar beschreibt bei Bedarf den MLKey genauer. Das ist sinnvoll, wenn der Text oder auch der MLKey erklärungsbedürftige Abkürzungen beinhaltet oder wenn es ähnliche Texte mit verschiedenen Verwendungszwecken gibt.
+* `LBL_` / `LBL_<PackageCode>_`: Der Suchdialog wurde z.B. aus einem Caption- oder Default-Label-Property aufgerufen.
+* `TTT_` / `TTT_<PackageCode>_`: Der Suchdialog wurde aus dem Tooltip-Property aufgerufen.
+* `MSG_` / `MSG_<PackageCode>_`: Der Suchdialog wurde aus dem MessageBox- bzw. Exception-Wizard aufgerufen.
 
-* **Obsolete**: Ein MLKey kann durch die Eingabe einer Obsolete-Message als veraltet markiert werden. Der Compiler wird bei Verwendung dieses MLKeys diese Message als Warning ausgeben. Weil das Löschen von MLKeys vor allem im Hinblick auf Customizing-Packages Compile-Errors erzeugt, sollte davon abgesehen und stattdessen diese Obsolete-Message verwendet werden. Ein Hinweis auf einen alternativ zu verwendenden MLKey ist empfehlenswert.
+#### Feld **Comment**
 
-* **German**: Die Eingabe eines deutschen Textes ist Pflicht, weil Deutsch immer der letzte Fallback ist, wenn eine Fremdsprache nicht gepflegt ist.
+Der Kommentar beschreibt bei Bedarf den MLKey genauer. Das ist sinnvoll, wenn der Text oder auch der MLKey erklärungsbedürftige Abkürzungen beinhaltet oder wenn es ähnliche Texte mit verschiedenen Verwendungszwecken gibt.
 
-* **Fremdsprachen**: Über die Radio-Buttons kann festgelegt werden, welche Sprache im 2. Textfeld angezeigt oder bearbeitet werden soll. Diese Texte sind optional.
+#### Textfeld **Obsolete**
 
-  Die angebotenen Fremdsprachen und deren Reihenfolge kann in den [Options](../allgemein/options.md#languages-in-designer) mit der Einstellung **Languages in designer** eingestellt werden. **German** lässt sich in diesem Dialog aber nicht steuern - diese Sprache wird immer im separaten Feld angezeigt.
+Ein MLKey kann durch die Eingabe einer Obsolete-Message als veraltet markiert werden. Der Compiler wird bei Verwendung dieses MLKeys diese Message als Warning ausgeben. Weil das Löschen von MLKeys vor allem im Hinblick auf Customizing-Packages Compile-Errors erzeugt, sollte davon abgesehen und stattdessen diese Obsolete-Message verwendet werden. Ein Hinweis auf einen alternativ zu verwendenden MLKey ist empfehlenswert.
 
-  In der **eNVenta/WS** Standard-Entwicklung muss der englische Text gepflegt werden.
+#### Textfeld **German**
 
-* Button **Untranslatable**: Es gibt Texte, die nicht übersetzt werden können wie z.B. Eigennamen oder Einheiten. Dieser Button löscht alle Fremdsprachen-Texte und Schreibt den Text `untranslatable` in das **Comment** Feld.
+Die Eingabe eines deutschen Textes ist Pflicht, weil Deutsch immer der letzte Fallback ist, wenn eine Fremdsprache nicht gepflegt ist.
 
-  Mit der Routine [MLKeys Cleanup](mlkey-cleanup.md) kann diese Aktion systematisch für das komplette Wörterbuch ausgeführt werden.
+#### Fremdsprachen
+
+Über die Radio-Buttons kann festgelegt werden, welche Sprache im 2. Textfeld angezeigt oder bearbeitet werden soll. Diese Texte sind optional.
+
+Die angebotenen Fremdsprachen und deren Reihenfolge kann in den [Options](../allgemein/options.md#languages-in-designer) mit der Einstellung **Languages in designer** eingestellt werden. **German** lässt sich in diesem Dialog aber nicht steuern - diese Sprache wird immer im separaten Feld angezeigt.
+
+In der **eNVenta/WS** Standard-Entwicklung muss der englische Text gepflegt werden.
+
+#### Button **Untranslatable**
+
+Es gibt Texte, die nicht übersetzt werden können wie z.B. Eigennamen oder Einheiten. Dieser Button löscht alle Fremdsprachen-Texte und Schreibt den Text `untranslatable` in das **Comment** Feld.
+
+Mit der Routine [MLKeys Cleanup](mlkey-cleanup.md) ist es möglich, systematisch nach Texten zu suchen, die dafür geeignet sind.
 
 ## Bearbeiten von MLKeys
 
