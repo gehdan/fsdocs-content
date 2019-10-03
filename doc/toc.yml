@@ -177,6 +177,8 @@ items:
           href: form/control/menu-item.md
         - name: Picture
           href: form/control/picture.md
+        - name: ListView
+          href: form/control/listview.md
     - name: "Erzeugen eines Suchdialogs durch Property-Funktionalität"
       href: form/control/erzeugen-suchdialogs-property.md
 
