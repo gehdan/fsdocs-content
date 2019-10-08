@@ -1,10 +1,41 @@
 # Release-Information Framework Studio 4.2
 
-## 4.2 Beta 3 (noch nicht veröffentlicht)
+## 4.2 Beta 3 (09.10.2019)
 
-#### Neue Funktionen
+Die Auslieferung umfasst das Paket
+
+* FS_4.2.0_Beta_3_Setup_x64
+
+Alle anderen Pakete wie Print-Service, Client-Launcher und Requirements können weiter aus Framework Studio 4.0 verwendet werden.
+
+#### Neuerungen
 
 * [Barcode-Scanner](../doc/html-client/barcode.md) im Mobile-Client
+* [Find unused MLKeys](../doc/mlkey/mlkey-cleanup.md#checkbox-find-unused-mlkeys) in MLKeys Cleanup
+* Code-Suche nach MLKeys - ControlTypes und Component-Properties werden gefunden
+* Language Translation Editor wurde entfernt
+
+#### Korrigierte Fehler
+
+* 2019037512 - **Java-Client**: Wird zur Laufzeit die Schriftgröße eines Grids geändert
+    (per Action oder Client Side Customizing), dann werden einige Anpassungen nicht nachgezogen:<br/>
+  o Die Breite der Spalten wird nicht neu berechnet<br/>
+  o Die Zeilen-Höhe wird nicht angepasst<br/>
+  o Die Beschriftungen im Spalten-Kopf behalten ihre Schrift-Größe bei<br/>
+  o Die Zeilen-Nummern im Row-Header behalten ihre Schrift-Größe bei<br/>
+
+* 2019099555 - **Oracle**: Im Update-Assistent kann es vorkommen, dass die Namen für den
+    IXROWID_-Index nicht eindeutig sind.
+
+* 2019109954 - **Runtime Supervisor**: Beim Senden von Logs von Observables zum Runtime
+    Supervisor kann es zum Deadlock kommen.
+
+* 2019099617 - **IDE**: Werden in Dialog "Manage Themes" neue Themes angelegt oder bestehende
+    Themes geändert, dann werden diese nicht im Repository gespeichert. Sie werden zwar in der
+    laufenden Sitzung angezeigt, aber beim nächsten Login sind die Änderungen verschwunden.
+
+* 2017099863 - **IDE**: Beim Kopieren eines Forms werden zu den enthaltenen AccessUnits die
+    Parent-Informationen nicht kopiert. Alle AccessUnits hängen im Ziel-Form unter "Root".
 
 ## 4.2 Beta 2 (18.09.2019)
 
